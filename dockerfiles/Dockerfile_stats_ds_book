@@ -1,0 +1,80 @@
+# Use Python 3.10 as the base image
+FROM python:3.10
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    bash \
+    build-essential \
+    curl \
+    wget \
+    git \
+    openjdk-17-jre-headless \
+    libffi-dev \
+    libssl-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libpq-dev \
+    zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Configure environment variables for Java and PySpark
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENV SPARK_VERSION=3.4.1
+ENV HADOOP_VERSION=3
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
+
+# Install Pyenv and Pyenv-Virtualenv
+ENV PYENV_ROOT=/root/.pyenv
+ENV PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
+
+RUN rm -rf $PYENV_ROOT ~/.pyenv && \
+    curl https://pyenv.run | bash && \
+    if [ -d $PYENV_ROOT/plugins/pyenv-virtualenv ]; then rm -rf $PYENV_ROOT/plugins/pyenv-virtualenv; fi && \
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv && \
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+    echo 'eval "$(pyenv init --path)"' >> ~/.bashrc && \
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc && \
+    bash -c "source ~/.bashrc && pyenv install 3.10.12 && pyenv global 3.10.12"
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH="/root/.local/bin:$PATH"
+
+# Set working directory to project root
+WORKDIR /app
+
+# Copy the entire project into the container
+COPY . /app
+
+# Ensure /notebooks directory exists
+# RUN mkdir -p /notebooks
+
+# Create a symbolic link for pyproject.toml in /notebooks
+RUN ln -s /app/pyproject.toml /app/notebooks/pyproject.toml
+
+# Set working directory to notebooks for Jupyter usage
+WORKDIR /app/notebooks
+
+# Set up pyenv environment
+RUN bash -c "source ~/.bashrc && pyenv virtualenv 3.10.12 stats_ds_book_env && pyenv activate stats_ds_book_env && poetry env use $(pyenv which python)"
+
+# Install Python dependencies in the virtual environment
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+# Install dependencies with Poetry
+RUN bash -c "source ~/.bashrc && poetry install"
+
+# Set working directory to app for entire repo usage
+WORKDIR /app
+
+# Expose ports for Jupyter Notebook
+EXPOSE 8888
+
+# Default command: bash
+CMD ["bash"]

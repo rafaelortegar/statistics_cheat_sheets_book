@@ -14,14 +14,17 @@ This repository contains a comprehensive course designed to take learners from t
     - [**1. Getting Started**](#1-getting-started)
     - [**2. Foundations of Statistics**](#2-foundations-of-statistics)
     - [**3. Probability Essentials**](#3-probability-essentials)
-    - [**4. Inferential Statistics**](#4-inferential-statistics)
-    - [**5. Regression Analysis**](#5-regression-analysis)
-    - [**6. Exploratory Data Analysis (EDA)**](#6-exploratory-data-analysis-eda)
-    - [**7. Advanced Topics**](#7-advanced-topics)
-    - [**8. Statistics in Machine Learning**](#8-statistics-in-machine-learning)
-    - [**9. Practical Applications**](#9-practical-applications)
-    - [**10. From Data to Decisions**](#10-from-data-to-decisions)
-    - [**11. Final Project**](#11-final-project)
+    - [**4. Statistical Distributions**](#4-statistical-distributions)
+    - [**5. Inferential Statistics**](#5-inferential-statistics)
+    - [**6. Regression Analysis**](#6-regression-analysis)
+    - [**7. Exploratory Data Analysis (EDA)**](#7-exploratory-data-analysis-eda)
+    - [**8. Advanced Topics**](#8-advanced-topics)
+    - [**9. Most Common Problems in Data Science**](#9-most-common-problems-in-data-science)
+    - [**10. Most Rare Problems in Data Science**](#10-most-rare-problems-in-data-science)
+    - [**11. Statistics in Machine Learning**](#11-statistics-in-machine-learning)
+    - [**12. Practical Applications**](#12-practical-applications)
+    - [**13. From Data to Decisions**](#13-from-data-to-decisions)
+    - [**14. Final Project**](#14-final-project)
   - [**Features**](#features)
   - [**Folder Structure**](#folder-structure)
   - [**Initial Setup**](#initial-setup)
@@ -35,7 +38,6 @@ This repository contains a comprehensive course designed to take learners from t
   - [**Contributing**](#contributing)
   - [**GitHub Actions**](#github-actions)
   - [**Beyond the Course**](#beyond-the-course)
-
 
 ---
 
@@ -64,46 +66,43 @@ This repository contains a comprehensive course designed to take learners from t
 - **What is Probability?**
   - Definitions and Basic Rules
   - Conditional Probability
-- **Distributions**:
-  - Discrete: Binomial, Poisson
-  - Continuous: Uniform, Normal
-  - The Role of Probability in Data Science
 - **Bayes' Theorem**:
   - Intuition and Applications
 
-### **4. Inferential Statistics**
+### **4. Statistical Distributions**
+- **Discrete Distributions**:
+  - Binomial Distribution: Concepts, Applications, and Examples
+  - Poisson Distribution: Modeling Rare Events
+  - Geometric and Hypergeometric Distributions
+- **Continuous Distributions**:
+  - Normal Distribution: Properties, Z-scores, and Applications
+  - Uniform, Exponential, Gamma, and Beta Distributions
+- **Multivariate Distributions**:
+  - Multivariate Normal Distribution, Covariance, and Correlation Matrices
+- **Applications**:
+  - Simulating Data and Fitting Distributions to Real-World Data
+
+### **5. Inferential Statistics**
 - **Sampling and Sampling Distributions**:
   - Methods: Random Sampling, Stratified Sampling
   - Central Limit Theorem
 - **Hypothesis Testing**:
   - Null and Alternative Hypotheses
-  - One-tailed vs. Two-tailed Tests
-  - Types of Errors (Type I and Type II)
-- **Tests for Means and Proportions**:
-  - Z-test, T-test, ANOVA
-- **Chi-Square Tests**:
-  - Goodness of Fit, Independence Tests
+  - Z-tests, T-tests, ANOVA, Chi-Square Tests
 
-### **5. Regression Analysis**
-- **Introduction to Regression**:
-  - Simple Linear Regression
-  - Multiple Linear Regression
-- **Model Assumptions and Diagnostics**:
-  - Multicollinearity, Homoscedasticity, Independence
-- **Regression Metrics**:
-  - R-squared, Adjusted R-squared
-  - MSE, RMSE, MAE
+### **6. Regression Analysis**
+- **Linear Regression**:
+  - Simple and Multiple Linear Regression
+  - Model Assumptions and Diagnostics
+- **Metrics**:
+  - R-squared, Adjusted R-squared, RMSE, MAE
 
-### **6. Exploratory Data Analysis (EDA)**
-- **The EDA Workflow**:
-  - Data Cleaning and Preprocessing
-  - Identifying Patterns and Trends
-- **Visualization for EDA**:
+### **7. Exploratory Data Analysis (EDA)**
+- **Data Cleaning and Visualization**:
   - Pair Plots, Correlation Heatmaps
-- **Outlier Detection and Treatment**:
-  - Z-scores, IQR Method
+  - Outlier Detection (Z-scores, IQR)
 
-### **7. Advanced Topics**
+### **8. Advanced Topics**
 - **Time Series Analysis**:
   - Components of Time Series (Trend, Seasonality)
   - Stationarity and Differencing
@@ -115,35 +114,41 @@ This repository contains a comprehensive course designed to take learners from t
 - **Non-Parametric Statistics**:
   - Mann-Whitney U Test, Kruskal-Wallis Test
 
-### **8. Statistics in Machine Learning**
+### **9. Most Common Problems in Data Science**
+- **Data Cleaning Challenges**:
+  - Handling Missing Values, Outliers, and Duplicates
+- **Bias Issues**:
+  - Sampling Bias, Data Leakage
+- **Scalability**:
+  - Optimizing Pipelines for Large Datasets
+- **Communication**:
+  - Interpreting Results for Stakeholders
+
+### **10. Most Rare Problems in Data Science**
+- **Sparse and Rare Data**:
+  - Long-Tail Distributions, Multivariate Outliers
+- **Unusual Phenomena**:
+  - Simpson's Paradox, Extreme Class Imbalances
+- **Niche Applications**:
+  - Genomics, Astronomy, System Failures
+
+### **11. Statistics in Machine Learning**
 - **Role of Statistics in ML**:
   - Data Preprocessing, Feature Engineering
-- **Evaluating Models with Statistics**:
-  - Confusion Matrix, Precision, Recall, F1 Score
-  - AUC-ROC Curve, Log-Loss
-- **Bias-Variance Tradeoff**
+- **Evaluating Models**:
+  - Confusion Matrix, Precision, Recall, AUC-ROC
 
-### **9. Practical Applications**
+### **12. Practical Applications**
 - **Real-World Case Studies**:
-  - A/B Testing for Marketing Campaigns
-  - Predictive Modeling for Sales Forecasting
-  - Customer Segmentation with Clustering
-- **Interpreting Outputs**:
-  - Using Statsmodels, Scikit-Learn, Pandas
+  - A/B Testing, Sales Forecasting, Customer Segmentation
 
-### **10. From Data to Decisions**
-- **Storytelling with Data**:
-  - Effective Communication of Results
-  - Visualization Best Practices
-- **Using Statistics for Decision-Making**
-- **Ethics in Data Science**
+### **13. From Data to Decisions**
+- **Storytelling and Ethics**:
+  - Communication and Ethical Considerations
 
-### **11. Final Project**
+### **14. Final Project**
 - **End-to-End Data Science Project**:
-  - Define a Problem Statement
-  - Perform EDA and Statistical Analysis
-  - Build Predictive Models
-  - Interpret and Present Results
+  - Problem Definition, EDA, Statistical Analysis, and Results
 
 ---
 
@@ -197,7 +202,7 @@ This repository contains a comprehensive course designed to take learners from t
 ### **Run with Docker**
 1. Build the Docker image:
    ```bash
-   docker build -t stats-ds-book -f dockerfiles/Dockerfile .
+   docker build -t stats-ds-book -f dockerfiles/Dockerfile_stats_ds_book .
    ```
 2. Run the container:
    ```bash
