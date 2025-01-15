@@ -1,0 +1,82 @@
+# Use Python 3.10 as the base image
+FROM python:3.10
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    bash \
+    build-essential \
+    curl \
+    wget \
+    git \
+    openjdk-17-jre-headless \
+    libffi-dev \
+    libssl-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libpq-dev \
+    zlib1g-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Configure environment variables for Java and PySpark
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENV SPARK_VERSION=3.4.1
+ENV HADOOP_VERSION=3
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
+
+# Install Pyenv
+ENV PYENV_ROOT=/root/.pyenv
+ENV PATH=$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH
+RUN curl https://pyenv.run | bash && \
+    pyenv install 3.10.12 && \
+    pyenv global 3.10.12
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH="/root/.local/bin:$PATH"
+
+# Install virtualenv
+RUN pip install --no-cache-dir virtualenv
+
+# Create a virtual environment for PySpark
+RUN python -m virtualenv /env
+
+# Copy requirements.txt into the container
+COPY requirements.txt /requirements.txt
+
+# Install Python dependencies in the virtual environment
+RUN /env/bin/pip install --no-cache-dir -r /requirements.txt
+
+# Install additional tools in the virtual environment
+RUN /env/bin/pip install --no-cache-dir \
+    pyspark \
+    jupyter \
+    jupyter-book \
+    jupytext \
+    flake8 \
+    black \
+    pre-commit
+
+# Configure Pre-Commit
+RUN /env/bin/pre-commit install
+
+# Download and install Apache Spark
+RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+    tar -xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz -C /opt && \
+    mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark && \
+    rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+
+# Create a directory for notebooks
+RUN mkdir /notebooks
+
+# Set the working directory
+WORKDIR /notebooks
+
+# Expose ports for Jupyter Notebook
+EXPOSE 8888
+
+# Default command: bash (you can manually launch Jupyter)
+CMD ["bash"]
