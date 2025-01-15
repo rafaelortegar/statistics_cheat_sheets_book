@@ -30,11 +30,11 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -415,22 +415,15 @@ or see <a class="reference external" href="https://myst-parser.readthedocs.io/en
 For example, here’s some sample Matplotlib code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span><span class="p">,</span> <span class="n">cycler</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7f9f75da3e20&gt;
 </pre></div>
 </div>
 </div>
@@ -447,7 +440,7 @@ For example, here’s some sample Matplotlib code:</p>
 <span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)))</span>
 
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.lines</span><span class="w"> </span><span class="kn">import</span> <span class="n">Line2D</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
 <span class="n">custom_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
                 <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">.5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
                 <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="mf">1.</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)]</span>
@@ -457,6 +450,9 @@ For example, here’s some sample Matplotlib code:</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e45e118a8a4d62f87d33665d57251d355a7aecadc9479b1bb00e3183c438ed13.png" src="_images/e45e118a8a4d62f87d33665d57251d355a7aecadc9479b1bb00e3183c438ed13.png" />
 </div>
 </div>
 <p>There is a lot more that you can do with outputs (such as including interactive outputs)

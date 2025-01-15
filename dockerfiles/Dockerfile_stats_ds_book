@@ -56,10 +56,10 @@ COPY . /app
 # RUN mkdir -p /notebooks
 
 # Create a symbolic link for pyproject.toml in /notebooks
-RUN ln -s /app/pyproject.toml /app/notebooks/pyproject.toml
+RUN ln -s /app/pyproject.toml /app/book/notebooks/pyproject.toml
 
 # Set working directory to notebooks for Jupyter usage
-WORKDIR /app/notebooks
+WORKDIR /app/book/notebooks
 
 # Set up pyenv environment
 RUN bash -c "source ~/.bashrc && pyenv virtualenv 3.10.12 stats_ds_book_env && pyenv activate stats_ds_book_env && poetry env use $(pyenv which python)"
