@@ -259,7 +259,7 @@ This repository contains a comprehensive course designed to take learners from t
    ```
 2. Run the container:
    ```bash
-   docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
+   docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book bash
    ```
 3. Run the jupyter notebook:
    ```bash
