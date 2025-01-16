@@ -58,6 +58,9 @@ RUN mkdir -p /app/book/notebooks
 # Create a symbolic link for pyproject.toml in /notebooks
 RUN ln -s /app/pyproject.toml /app/book/notebooks/pyproject.toml
 
+# pre install requirements dependencies:
+RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && pip install -r requirements.txt && poetry add $(cat requirements.txt)"
+
 # Install Python dependencies with Poetry
 RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && poetry env use $(pyenv which python) && poetry install"
 
@@ -90,4 +93,7 @@ EXPOSE 8888
 EXPOSE 8000
 
 # Default command to activate pyenv and launch Jupyter Lab
-CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env && cd /app && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root && jupyter-book build . && jupyter-book serve --port 8000 --no-browser --watch ."]
+# CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env"]
+CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env && pip install -r requirements.txt && poetry add $(cat requirements.txt)"]
+# CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env && poetry add $(cat requirements.txt)"]
+# CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env && cd /app && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root && jupyter-book build . && jupyter-book serve --port 8000 --no-browser --watch ."]

@@ -261,14 +261,22 @@ This repository contains a comprehensive course designed to take learners from t
    ```bash
    docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
    ```
-3. **Access Jupyter Notebook**:
+3. Run the jupyter notebook:
+   ```bash
+   jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+   ```
+<!-- 3. Run the jupyter book:
+   ```bash
+   docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
+   ``` -->
+4. **Access Jupyter Notebook**:
    - Once the container is running, access Jupyter Notebook via:
      ```
      http://localhost:8888
      ```
    - Copy the token displayed in the terminal and use it to log in.
 
-4. **Build and Serve Jupyter Book**:
+5. **Build and Serve Jupyter Book**:
    - Inside the container, navigate to the book's directory:
      ```bash
      cd /app/book
