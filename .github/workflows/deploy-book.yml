@@ -24,6 +24,11 @@ jobs:
           pip install -r requirements.txt
           pip list
 
+      - name: Install Jupyter and Kernel
+        run: |
+          pip install jupyter ipykernel
+          python -m ipykernel install --user --name=python3
+
       - name: Install Jupyter Book
         run: |
           pip install jupyter-book
