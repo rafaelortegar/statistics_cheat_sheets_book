@@ -61,13 +61,20 @@ This repository contains a comprehensive course designed to take learners from t
   - Skewness and Kurtosis
 - **Data Visualization**:
   - Graphical Representations: Histograms, Boxplots, Scatterplots, Heatmaps
+- **Error Metrics**:
+  - Absolute and Relative Error in descriptive statistics
 
 ### **3. Probability Essentials**
 - **What is Probability?**
   - Definitions and Basic Rules
   - Conditional Probability
+- **Advanced Probability Topics**:
+  - Joint and Marginal Probability
+  - Independence vs. Dependence of Events
 - **Bayes' Theorem**:
   - Intuition and Applications
+- **Probability in Data Science**:
+  - Practical applications like anomaly detection and recommendation systems.
 
 ### **4. Statistical Distributions**
 - **Discrete Distributions**:
@@ -79,6 +86,10 @@ This repository contains a comprehensive course designed to take learners from t
   - Uniform, Exponential, Gamma, and Beta Distributions
 - **Multivariate Distributions**:
   - Multivariate Normal Distribution, Covariance, and Correlation Matrices
+- **Advanced Continuous Distributions**:
+  - Log-Normal, Weibull, and Pareto Distributions
+- **Goodness-of-Fit Testing**:
+  - Chi-Square Test for Distribution Fit
 - **Applications**:
   - Simulating Data and Fitting Distributions to Real-World Data
 
@@ -86,9 +97,15 @@ This repository contains a comprehensive course designed to take learners from t
 - **Sampling and Sampling Distributions**:
   - Methods: Random Sampling, Stratified Sampling
   - Central Limit Theorem
+- **Confidence Intervals**:
+  - Calculating and interpreting confidence intervals.
+- **Effect Size**:
+  - Understanding and calculating Cohen’s d, Pearson’s r
 - **Hypothesis Testing**:
   - Null and Alternative Hypotheses
   - Z-tests, T-tests, ANOVA, Chi-Square Tests
+- **Common Problems**
+  - "Everything is significant" problem
 
 ### **6. Regression Analysis**
 - **Linear Regression**:
@@ -96,21 +113,35 @@ This repository contains a comprehensive course designed to take learners from t
   - Model Assumptions and Diagnostics
 - **Metrics**:
   - R-squared, Adjusted R-squared, RMSE, MAE
+- **Advanced Regression Techniques**:
+  - Ridge and Lasso Regression
+  - Logistic Regression for binary outcomes
+- **Regularization**:
+  - Addressing multicollinearity and overfitting
 
 ### **7. Exploratory Data Analysis (EDA)**
 - **Data Cleaning and Visualization**:
   - Pair Plots, Correlation Heatmaps
   - Outlier Detection (Z-scores, IQR)
+- **Dimensionality Reduction**:
+  - Introduction to PCA (Principal Component Analysis) and t-SNE
 
 ### **8. Advanced Topics**
+- **Bayesian Statistics**:
+  - Bayesian Inference and Updating
 - **Time Series Analysis**:
   - Components of Time Series (Trend, Seasonality)
   - Stationarity and Differencing
   - ARIMA Models
+  - Forecasting with Prophet
 - **Survival Analysis**:
-  - Kaplan-Meier, Hazard Functions
+  - Kaplan-Meier
+  - Hazard Functions
+  - Cox Proportional Hazard Models
 - **Resampling Techniques**:
-  - Bootstrapping, Cross-Validation
+  - Bootstrapping
+  - Cross-Validation
+  - Jackknife method
 - **Non-Parametric Statistics**:
   - Mann-Whitney U Test, Kruskal-Wallis Test
 
@@ -121,6 +152,10 @@ This repository contains a comprehensive course designed to take learners from t
   - Sampling Bias, Data Leakage
 - **Scalability**:
   - Optimizing Pipelines for Large Datasets
+- **Feature Selection Techniques**:
+  - Statistical methods for feature importance
+- **Multi-collinearity Detection**:
+  - Variance Inflation Factor (VIF)
 - **Communication**:
   - Interpreting Results for Stakeholders
 
@@ -129,6 +164,10 @@ This repository contains a comprehensive course designed to take learners from t
   - Long-Tail Distributions, Multivariate Outliers
 - **Unusual Phenomena**:
   - Simpson's Paradox, Extreme Class Imbalances
+- **Handling Non-Stationary Data**:
+  - Time-evolving distributions and drift detection
+- **Sparse Data Solutions**:
+  - Matrix Factorization Techniques
 - **Niche Applications**:
   - Genomics, Astronomy, System Failures
 
@@ -137,14 +176,26 @@ This repository contains a comprehensive course designed to take learners from t
   - Data Preprocessing, Feature Engineering
 - **Evaluating Models**:
   - Confusion Matrix, Precision, Recall, AUC-ROC
+- **Statistical Foundations of ML Algorithms**:
+  - Gradient Descent, Bayesian Optimization
+- **Bias-Variance Tradeoff**:
+  - Practical examples with real-world data
 
 ### **12. Practical Applications**
 - **Real-World Case Studies**:
   - A/B Testing, Sales Forecasting, Customer Segmentation
+- **Business Context Applications**:
+  - Risk Analysis, Fraud Detection
+- **Custom Visualizations**:
+  - Using libraries like Plotly or Dash
 
 ### **13. From Data to Decisions**
 - **Storytelling and Ethics**:
   - Communication and Ethical Considerations
+- **Data Storytelling Techniques**:
+  - Structuring narratives for different audiences
+- **Causal Inference**:
+  - Using techniques like Instrumental Variables and Propensity Score Matching
 
 ### **14. Final Project**
 - **End-to-End Data Science Project**:
@@ -203,11 +254,37 @@ This repository contains a comprehensive course designed to take learners from t
 1. Build the Docker image:
    ```bash
    docker build -t stats-ds-book -f dockerfiles/Dockerfile_stats_ds_book .
+   or
+   docker build --no-cache -t stats-ds-book -f dockerfiles/Dockerfile_stats_ds_book .
    ```
 2. Run the container:
    ```bash
    docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
    ```
+3. **Access Jupyter Notebook**:
+   - Once the container is running, access Jupyter Notebook via:
+     ```
+     http://localhost:8888
+     ```
+   - Copy the token displayed in the terminal and use it to log in.
+
+4. **Build and Serve Jupyter Book**:
+   - Inside the container, navigate to the book's directory:
+     ```bash
+     cd /app/book
+     ```
+   - Build the book using:
+     ```bash
+     jupyter-book build .
+     ```
+   - Serve the built book on a local server:
+     ```bash
+     python -m http.server 8000 --directory _build/html
+     ```
+   - Access the Jupyter Book in your browser at:
+     ```
+     http://localhost:8000
+     ```
 
 ### **Run Locally with Poetry**
 1. Activate the Poetry environment:

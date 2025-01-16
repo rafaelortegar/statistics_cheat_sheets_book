@@ -40,7 +40,7 @@ RUN rm -rf $PYENV_ROOT ~/.pyenv && \
     echo 'eval "$(pyenv init --path)"' >> ~/.bashrc && \
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
     echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc && \
-    bash -c "source ~/.bashrc && pyenv install 3.10.12 && pyenv global 3.10.12"
+    bash -c "source ~/.bashrc && pyenv install 3.10.12 && pyenv virtualenv 3.10.12 stats_ds_book_env && pyenv global stats_ds_book_env"
 
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
@@ -53,28 +53,41 @@ WORKDIR /app
 COPY . /app
 
 # Ensure /notebooks directory exists
-# RUN mkdir -p /notebooks
+RUN mkdir -p /app/book/notebooks
 
 # Create a symbolic link for pyproject.toml in /notebooks
 RUN ln -s /app/pyproject.toml /app/book/notebooks/pyproject.toml
 
-# Set working directory to notebooks for Jupyter usage
-WORKDIR /app/book/notebooks
+# Install Python dependencies with Poetry
+RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && poetry env use $(pyenv which python) && poetry install"
 
-# Set up pyenv environment
-RUN bash -c "source ~/.bashrc && pyenv virtualenv 3.10.12 stats_ds_book_env && pyenv activate stats_ds_book_env && poetry env use $(pyenv which python)"
+# Install additional tools in the Pyenv environment
+RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && \
+    pip install --no-cache-dir \
+    pyspark \
+    jupyter \
+    jupyter-book \
+    jupytext \
+    flake8 \
+    black \
+    pre-commit"
 
-# Install Python dependencies in the virtual environment
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Install Jupyter
+# RUN pip install jupyterlab
+RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && pip install jupyterlab"
 
-# Install dependencies with Poetry
-RUN bash -c "source ~/.bashrc && poetry install"
+# Configure Pre-Commit
+RUN bash -c "source ~/.bashrc && pyenv activate stats_ds_book_env && pre-commit install"
 
-# Set working directory to app for entire repo usage
-WORKDIR /app
+# Download and install Apache Spark
+RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+    tar -xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz -C /opt && \
+    mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark && \
+    rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 
 # Expose ports for Jupyter Notebook
 EXPOSE 8888
+EXPOSE 8000
 
-# Default command: bash
-CMD ["bash"]
+# Default command to activate pyenv and launch Jupyter Lab
+CMD ["bash", "-c", "source ~/.bashrc && pyenv activate stats_ds_book_env && cd /app && jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root && jupyter-book build . && jupyter-book serve --port 8000 --no-browser --watch ."]

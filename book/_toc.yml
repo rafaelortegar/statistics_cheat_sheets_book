@@ -7,5 +7,7 @@ chapters:
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
-- title: Introduction to Statistics
+- title: Introduction to statistics
   file: notebooks/introduction
+- title: Setting up the environment
+  file: notebooks/setting_up_environment

@@ -1,0 +1,1100 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Setting up the environment &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/setting_up_environment';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Introduction to Statistics for Data Science" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Statistics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setting up the cloud9:ListEnvironment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/setting_up_environment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/setting_up_environment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setting up the environment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">1. Python setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-libraries">Required libraries:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">Importing libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-statistical-tools-and-datasets">2. Introduction to statistical tools and datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-a-sample-dataset">Example: Loading a sample dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-dataset">Exploring the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">3. Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-distribution-of-total-bills">Example: Distribution of Total Bills</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-distributions-and-insights-from-histograms">Statistical Distributions and Insights from Histograms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-relationship-between-total-bill-and-tip">Example: Relationship Between Total Bill and Tip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insights-from-scatterplots">Insights from scatterplots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Insights from Scatterplots</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-basic-statistical-analysis">4. Performing Basic Statistical Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-hypothesis-testing">Example: Hypothesis Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hypothesis-testing">What is Hypothesis Testing?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5. Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-the-environment">
+<h1>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Link to this heading">#</a></h1>
+<p>To set up the environment needed to run this code, visit this <a class="reference external" href="https://github.com/rafaelortegar/statistics_cheat_sheets_book">repository</a>. The repository contains detailed setup instructions in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, including how to install dependencies via the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p>
+<p>In this notebook, we will configure the Python environment for data science and statistics. You will learn how to install and use essential libraries like Pandas, NumPy, and Matplotlib, and we’ll explore their functionalities through hands-on examples.</p>
+<hr class="docutils" />
+<section id="python-setup">
+<h2>1. Python setup<a class="headerlink" href="#python-setup" title="Link to this heading">#</a></h2>
+<section id="required-libraries">
+<h3>Required libraries:<a class="headerlink" href="#required-libraries" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Pandas</strong>: For data manipulation and analysis.</p></li>
+<li><p><strong>NumPy</strong>: For numerical operations.</p></li>
+<li><p><strong>Matplotlib and Seaborn</strong>: For data visualization.</p></li>
+<li><p><strong>Statsmodels</strong>: For statistical modeling and hypothesis testing.</p></li>
+<li><p><strong>Scipy</strong>: For advanced statistical operations.</p></li>
+</ul>
+</section>
+<section id="importing-libraries">
+<h3>Importing libraries<a class="headerlink" href="#importing-libraries" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># Set default settings for visualizations</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Set default settings for visualizations</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction-to-statistical-tools-and-datasets">
+<h2>2. Introduction to statistical tools and datasets<a class="headerlink" href="#introduction-to-statistical-tools-and-datasets" title="Link to this heading">#</a></h2>
+<section id="example-loading-a-sample-dataset">
+<h3>Example: Loading a sample dataset<a class="headerlink" href="#example-loading-a-sample-dataset" title="Link to this heading">#</a></h3>
+<p>We will use the built-in dataset <code class="docutils literal notranslate"><span class="pre">tips</span></code> from Seaborn for demonstrations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load sample dataset</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display the first five rows</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-the-dataset">
+<h3>Exploring the Dataset<a class="headerlink" href="#exploring-the-dataset" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Summary statistics of the dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive statistics for this dataset&quot;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Descriptive statistics for this dataset
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>244.000000</td>
+      <td>244.000000</td>
+      <td>244.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>19.785943</td>
+      <td>2.998279</td>
+      <td>2.569672</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.902412</td>
+      <td>1.383638</td>
+      <td>0.951100</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.070000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>13.347500</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>17.795000</td>
+      <td>2.900000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>24.127500</td>
+      <td>3.562500</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>50.810000</td>
+      <td>10.000000</td>
+      <td>6.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Statistics allows us to uncover valuable insights hidden within data. With Python, we can efficiently apply statistical concepts and extract meaningful information in no time. In this course, you’ll learn not only how to calculate descriptive statistics but also how to interpret them and derive actionable insights that can drive decision-making.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for missing values</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>total_bill</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>tip</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>smoker</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>day</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>time</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="visualizing-data">
+<h2>3. Visualizing Data<a class="headerlink" href="#visualizing-data" title="Link to this heading">#</a></h2>
+<section id="example-distribution-of-total-bills">
+<h3>Example: Distribution of Total Bills<a class="headerlink" href="#example-distribution-of-total-bills" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the distribution of total bills</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+    <span class="n">tips</span><span class="p">[</span><span class="s2">&quot;total_bill&quot;</span><span class="p">],</span>
+    <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of total bills&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Total bill ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7a2f4999b6c10cf903ca5cb3b4d806096732596c24ced8fd13c6e5013fcf6b35.png" src="../_images/7a2f4999b6c10cf903ca5cb3b4d806096732596c24ced8fd13c6e5013fcf6b35.png" />
+</div>
+</div>
+<section id="statistical-distributions-and-insights-from-histograms">
+<h4>Statistical Distributions and Insights from Histograms<a class="headerlink" href="#statistical-distributions-and-insights-from-histograms" title="Link to this heading">#</a></h4>
+<p>Statistical distributions and histograms are powerful tools for visually uncovering patterns and insights in data, making them essential for informed decision-making.</p>
+<p>This plot, showing the distribution of total bills, can provide a variety of insights depending on the context and objectives of the analysis. Let’s explore some of the key insights that this plot can reveal:</p>
+<ol class="arabic simple">
+<li><p><strong>Spending Behavior:</strong><br />
+The overall shape of the distribution can reveal general customer spending patterns, such as:</p>
+<ul class="simple">
+<li><p>Where the majority of bills lie (e.g., most frequent total bill amounts).</p></li>
+<li><p>How spending habits differ across low, moderate, and high bill amounts.</p></li>
+</ul>
+</li>
+<li><p><strong>Identifying Common Ranges:</strong><br />
+The histogram highlights the range of bill amounts that are most common. This information helps businesses understand where the majority of their revenue comes from and optimize pricing strategies.</p></li>
+<li><p><strong>Variability in Spending:</strong><br />
+The spread of the distribution can indicate variability in customer spending:</p>
+<ul class="simple">
+<li><p>A narrow spread suggests consistent spending.</p></li>
+<li><p>A wider spread implies more diverse spending habits.</p></li>
+</ul>
+</li>
+<li><p><strong>Presence of Outliers:</strong><br />
+The extremely high or low values in the distribution can signal outliers, such as:</p>
+<ul class="simple">
+<li><p>Large group orders or unusual customer behavior.</p></li>
+<li><p>Extremely low bills that might indicate promotions or discounts.</p></li>
+</ul>
+</li>
+<li><p><strong>Opportunities for Targeted Strategies:</strong><br />
+If certain ranges of spending dominate (e.g., mid-range bills), marketing campaigns, menu pricing, or promotions can target those segments effectively.<br />
+Additionally, identifying smaller segments (e.g., high spenders) could help design premium services or upselling opportunities.</p></li>
+<li><p><strong>Customer Segmentation:</strong><br />
+This distribution could form the basis for segmenting customers into groups:</p>
+<ul class="simple">
+<li><p>Budget-conscious customers (low bills).</p></li>
+<li><p>Average spenders (middle-range bills).</p></li>
+<li><p>High-value customers (upper-range bills).</p></li>
+</ul>
+</li>
+<li><p><strong>Revenue Optimization:</strong><br />
+By analyzing the distribution, businesses can focus on optimizing menu items or services that cater to the most common spending ranges while creating strategies to attract higher spenders.</p></li>
+<li><p><strong>Informing Future Analysis:</strong><br />
+This plot also serves as a foundation for deeper analyses, such as:</p>
+<ul class="simple">
+<li><p>Exploring correlations with other variables (e.g., tips, party size, or time of day).</p></li>
+<li><p>Investigating whether spending patterns vary across weekdays vs. weekends or lunch vs. dinner.</p></li>
+</ul>
+</li>
+</ol>
+<p>By leveraging insights like these, businesses can better understand their customer base, optimize operations, and create targeted strategies to improve both customer experience and revenue.</p>
+<p>We will explore this topic further in section <strong>7. Exploratory Data Analysis</strong> for a more comprehensive understanding.</p>
+</section>
+</section>
+<section id="example-relationship-between-total-bill-and-tip">
+<h3>Example: Relationship Between Total Bill and Tip<a class="headerlink" href="#example-relationship-between-total-bill-and-tip" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatter plot with regression line</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Total bill vs tip&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Total bill ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tip ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/074f88e15d5fd5e9c4209c83a24eb267018c8c5f82e4ac3416cfe0c58e5175d9.png" src="../_images/074f88e15d5fd5e9c4209c83a24eb267018c8c5f82e4ac3416cfe0c58e5175d9.png" />
+</div>
+</div>
+</section>
+<section id="insights-from-scatterplots">
+<h3>Insights from scatterplots<a class="headerlink" href="#insights-from-scatterplots" title="Link to this heading">#</a></h3>
+<p>A scatterplot is a visualization tool used to plot data points on a two-dimensional graph. Each point represents a single observation, with its position determined by the values of two numerical variables. Scatterplots are widely used in statistics and data analysis to understand relationships, trends, and variability.</p>
+<p>This scatterplot, showing the relationship between total bills and tips, along with a regression line, provides several types of insights that can be derived:</p>
+<ol class="arabic simple">
+<li><p><strong>Relationship Between Variables:</strong></p>
+<ul class="simple">
+<li><p>The scatterplot helps identify the overall trend or relationship between total bill amounts and tips.</p></li>
+<li><p>The regression line and confidence interval provide a visual indication of the general direction and strength of this relationship.</p></li>
+</ul>
+</li>
+<li><p><strong>Tipping Patterns:</strong></p>
+<ul class="simple">
+<li><p>The distribution of points reveals how tipping behavior varies with the total bill amount. For example, do higher bills correspond to higher tips?</p></li>
+<li><p>It can help identify whether tipping behavior is consistent across different spending levels or varies significantly.</p></li>
+</ul>
+</li>
+<li><p><strong>Variability in Tips:</strong></p>
+<ul class="simple">
+<li><p>The spread of points around the regression line shows the variability in tips for a given bill amount.</p></li>
+<li><p>Wider spreads indicate more diverse tipping habits, while narrower spreads suggest more consistent behavior.</p></li>
+</ul>
+</li>
+<li><p><strong>Potential Outliers:</strong></p>
+<ul class="simple">
+<li><p>Points that fall far from the regression line could indicate outliers in tipping behavior.</p></li>
+<li><p>These could represent unusually high or low tips for a given bill amount, which might warrant further investigation.</p></li>
+</ul>
+</li>
+<li><p><strong>Tipping Trends:</strong></p>
+<ul class="simple">
+<li><p>The slope of the regression line provides insight into how much tips typically increase as the total bill increases.</p></li>
+<li><p>Understanding this trend can help businesses estimate expected tips based on bill size.</p></li>
+</ul>
+</li>
+<li><p><strong>Customer Segmentation:</strong></p>
+<ul class="simple">
+<li><p>Grouping data points can reveal different customer tipping behaviors, such as:</p>
+<ul>
+<li><p>Customers who tip proportionally higher relative to their bills.</p></li>
+<li><p>Customers who tip less consistently regardless of the bill amount.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Opportunities for Business Strategies:</strong></p>
+<ul class="simple">
+<li><p>If tips increase steadily with bill size, businesses could explore strategies to encourage higher spending (e.g., upselling or offering premium services).</p></li>
+<li><p>If tipping behavior is inconsistent, businesses might consider training staff or suggesting tipping guidelines to encourage better tipping practices.</p></li>
+</ul>
+</li>
+<li><p><strong>Correlation Analysis:</strong></p>
+<ul class="simple">
+<li><p>The plot visually suggests whether there is a positive, negative, or no correlation between total bill amounts and tips.</p></li>
+<li><p>This can serve as the basis for statistical analyses to quantify the strength of the relationship.</p></li>
+</ul>
+</li>
+<li><p><strong>Informing Future Analysis:</strong></p>
+<ul class="simple">
+<li><p>This plot can guide further questions, such as:</p>
+<ul>
+<li><p>Do tipping trends differ by party size, time of day, or day of the week?</p></li>
+<li><p>Are there any systematic differences in tipping behavior across customer segments?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>By analyzing these types of insights, businesses can better understand tipping dynamics, optimize service strategies, and enhance customer experiences.</p>
+<p>We will explore this topic further in section <strong>7. Exploratory Data Analysis</strong> for a more comprehensive understanding.</p>
+</section>
+<section id="id1">
+<h3><strong>Insights from Scatterplots</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>A scatterplot is a visualization tool used to plot data points on a two-dimensional graph. Each point represents a single observation, with its position determined by the values of two numerical variables. Scatterplots are widely used in statistics and data analysis to understand relationships, trends, and variability.</p>
+<p>This scatterplot, showing the relationship between total bills and tips (x-axis: total bill, y-axis: tip), along with a regression line, provides several types of insights that can be derived:</p>
+<ol class="arabic simple">
+<li><p><strong>Relationship Between Variables:</strong></p>
+<ul class="simple">
+<li><p>The scatterplot helps identify the overall trend or relationship between total bill amounts and tips.</p></li>
+<li><p>The regression line and its confidence interval provide a visual indication of the general direction and strength of this relationship.</p></li>
+</ul>
+</li>
+<li><p><strong>Tipping Patterns:</strong></p>
+<ul class="simple">
+<li><p>The distribution of points reveals how tipping behavior varies with the total bill amount. For example, do higher bills correspond to higher tips?</p></li>
+<li><p>It can help identify whether tipping behavior is consistent across different spending levels or varies significantly.</p></li>
+</ul>
+</li>
+<li><p><strong>Variability in Tips:</strong></p>
+<ul class="simple">
+<li><p>The spread of points around the regression line shows the variability in tips for a given bill amount.</p></li>
+<li><p>Wider spreads indicate more diverse tipping habits, while narrower spreads suggest more consistent behavior.</p></li>
+</ul>
+</li>
+<li><p><strong>Potential Outliers:</strong></p>
+<ul class="simple">
+<li><p>Points that fall far from the regression line could indicate outliers in tipping behavior.</p></li>
+<li><p>These could represent unusually high or low tips for a given bill amount, which might warrant further investigation.</p></li>
+</ul>
+</li>
+<li><p><strong>Tipping Trends:</strong></p>
+<ul class="simple">
+<li><p>The upward slope of the regression line provides insight into how tips typically increase as the total bill increases.</p></li>
+<li><p>Understanding this trend can help businesses estimate expected tips based on bill size.</p></li>
+</ul>
+</li>
+<li><p><strong>Customer Segmentation:</strong></p>
+<ul class="simple">
+<li><p>Grouping data points can reveal different customer tipping behaviors, such as:</p>
+<ul>
+<li><p>Customers who tip proportionally higher relative to their bills.</p></li>
+<li><p>Customers who tip less consistently regardless of the bill amount.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Opportunities for Business Strategies:</strong></p>
+<ul class="simple">
+<li><p>If tips increase steadily with bill size, businesses could explore strategies to encourage higher spending (e.g., upselling or offering premium services).</p></li>
+<li><p>If tipping behavior is inconsistent, businesses might consider training staff or suggesting tipping guidelines to encourage better tipping practices.</p></li>
+</ul>
+</li>
+<li><p><strong>Correlation Analysis:</strong></p>
+<ul class="simple">
+<li><p>The plot visually suggests whether there is a positive, negative, or no correlation between total bill amounts and tips.</p></li>
+<li><p>This can serve as the basis for statistical analyses to quantify the strength of the relationship.</p></li>
+</ul>
+</li>
+<li><p><strong>Informing Future Analysis:</strong></p>
+<ul class="simple">
+<li><p>This plot can guide further questions, such as:</p>
+<ul>
+<li><p>Do tipping trends differ by party size, time of day, or day of the week?</p></li>
+<li><p>Are there any systematic differences in tipping behavior across customer segments?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>By analyzing these types of insights, businesses can better understand tipping dynamics, optimize service strategies, and enhance customer experiences.</p>
+<p>We will explore this topic further in section <strong>7. Exploratory Data Analysis</strong> for a more comprehensive understanding.</p>
+</section>
+</section>
+<section id="performing-basic-statistical-analysis">
+<h2>4. Performing Basic Statistical Analysis<a class="headerlink" href="#performing-basic-statistical-analysis" title="Link to this heading">#</a></h2>
+<section id="example-hypothesis-testing">
+<h3>Example: Hypothesis Testing<a class="headerlink" href="#example-hypothesis-testing" title="Link to this heading">#</a></h3>
+<section id="what-is-hypothesis-testing">
+<h4>What is Hypothesis Testing?<a class="headerlink" href="#what-is-hypothesis-testing" title="Link to this heading">#</a></h4>
+<p>Hypothesis testing is a statistical method used to evaluate and decide whether there is enough evidence in a sample of data to infer that a certain condition or statement is true for the entire population. It is a fundamental process in statistics, enabling decision-making under uncertainty.</p>
+<p>In the descriptive statistics for this dataset, we observed that the mean tip is close to <strong>\<span class="math notranslate nohighlight">\(3** (2.998279). In this section, we will perform a hypothesis test to determine if the average tip is statistically significantly different from **\\\)</span>3</strong>. This will help us confirm whether the observed mean could be due to random variation or represents a true difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform a one-sample t-test</span>
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="n">tips</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">null_hypothesis_mean</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Null Hypothesis (H0): The mean tip is $3.</span>
+<span class="c1"># Alternative Hypothesis (H1): The mean tip is not $3.</span>
+
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span>
+    <span class="n">tips</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">],</span>
+    <span class="n">null_hypothesis_mean</span>
+<span class="p">)</span>
+
+<span class="c1"># Check for missing values</span>
+<span class="k">if</span> <span class="n">tips</span><span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: Missing values found in the &#39;tip&#39; column. Results may be inaccurate.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sample Mean: $</span><span class="si">{</span><span class="n">sample_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;T-Statistic: </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P-Value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interpret results</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reject the null hypothesis: The average tip is significantly different from $3 at the 5</span><span class="si">% s</span><span class="s2">ignificance level.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fail to reject the null hypothesis: There is no significant evidence to suggest the average tip differs from $3.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample Mean: $3.00
+T-Statistic: -0.0194
+P-Value: 0.9845
+Fail to reject the null hypothesis: There is no significant evidence to suggest the average tip differs from $3.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h4>Conclusion:<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h4>
+<p>The sample mean tip is <strong>\$3.00</strong>, which is exactly equal to the null hypothesis value. The t-statistic is <strong>-0.0194</strong>, and the p-value is <strong>0.9845</strong>, which is much greater than the significance level of <strong>0.05</strong> (or 5%).</p>
+<p>This means:</p>
+<ul class="simple">
+<li><p><strong>Fail to reject the null hypothesis</strong>: There is no significant evidence to suggest that the average tip differs from <strong>\$3</strong>.</p></li>
+<li><p><strong>Practical Implication</strong>: The observed data supports the claim that the mean tip is approximately <strong>\<span class="math notranslate nohighlight">\(3**. Any slight differences are likely due to random variation rather than a true difference. This reinforces the reliability of using **\\\)</span>3</strong> as a baseline for further analysis.</p></li>
+</ul>
+<p>We will explore this concept in greater detail in <strong>Section 5: Inferential Statistics</strong>, where we delve deeper into the principles and applications of hypothesis testing.</p>
+</section>
+</section>
+</section>
+<section id="summary">
+<h2>5. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>In this notebook, we:</p>
+<ul class="simple">
+<li><p>Set up the Python environment for data science and statistics, including essential libraries like Pandas, NumPy, and Matplotlib.</p></li>
+<li><p>Explored a sample dataset (the <code class="docutils literal notranslate"><span class="pre">tips</span></code> dataset) to understand its structure and key metrics.</p></li>
+<li><p>Visualized data to identify patterns and relationships, using histograms and scatterplots.</p></li>
+<li><p>Performed a basic statistical test (one-sample t-test) to draw insights from the data.</p></li>
+</ul>
+<p>This foundation prepares us for more advanced statistical and data science concepts in subsequent lessons. It also enables us to test code with real examples throughout the course, promoting a hands-on, learn-by-doing approach.</p>
+<p>Feel free to revisit this notebook to experiment with the code, explore additional datasets, or deepen your understanding of the concepts.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Statistics for Data Science</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">1. Python setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-libraries">Required libraries:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries">Importing libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-statistical-tools-and-datasets">2. Introduction to statistical tools and datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-a-sample-dataset">Example: Loading a sample dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-dataset">Exploring the Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">3. Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-distribution-of-total-bills">Example: Distribution of Total Bills</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-distributions-and-insights-from-histograms">Statistical Distributions and Insights from Histograms</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-relationship-between-total-bill-and-tip">Example: Relationship Between Total Bill and Tip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insights-from-scatterplots">Insights from scatterplots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Insights from Scatterplots</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performing-basic-statistical-analysis">4. Performing Basic Statistical Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-hypothesis-testing">Example: Hypothesis Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hypothesis-testing">What is Hypothesis Testing?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">5. Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
