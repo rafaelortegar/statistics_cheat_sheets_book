@@ -44,6 +44,7 @@ This repository contains a comprehensive course designed to take learners from t
 ## **Course Index**
 
 ### **1. Getting Started**
+
 - **Introduction**:
   - What is Statistics? Why is it important for Data Science?
   - Overview of the course structure and objectives.
@@ -52,19 +53,31 @@ This repository contains a comprehensive course designed to take learners from t
   - Introduction to statistical tools and datasets.
 
 ### **2. Foundations of Statistics**
+
 - **Basic Terminology**:
   - Population vs. Sample
-  - Types of Data: Categorical, Numerical, Ordinal
+  - Descriptive vs. Inferential statistics
+  - Parameters vs. Statistics
+  - Types of Data: Categorical, Numerical, Ordinal, Interval, Ratio, Time Series
+  - Levels of measurement
+  - Variables
+  - Correlation vs causation
 - **Descriptive Statistics**:
-  - Central Tendency: Mean, Median, Mode
-  - Variability: Range, Variance, Standard Deviation
+  - Central Tendency measurements: Mean, Median, Mode
+  - Variability measurements: Range, Variance, Standard Deviation
   - Skewness and Kurtosis
 - **Data Visualization**:
   - Graphical Representations: Histograms, Boxplots, Scatterplots, Heatmaps
+- **Sampling methods**:
+  - Simple Random Sampling
+  - Stratified Sampling
+  - Cluster Sampling
+  - Systematic Sampling
 - **Error Metrics**:
   - Absolute and Relative Error in descriptive statistics
 
 ### **3. Probability Essentials**
+
 - **What is Probability?**
   - Definitions and Basic Rules
   - Conditional Probability
@@ -77,6 +90,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Practical applications like anomaly detection and recommendation systems.
 
 ### **4. Statistical Distributions**
+
 - **Discrete Distributions**:
   - Binomial Distribution: Concepts, Applications, and Examples
   - Poisson Distribution: Modeling Rare Events
@@ -94,6 +108,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Simulating Data and Fitting Distributions to Real-World Data
 
 ### **5. Inferential Statistics**
+
 - **Sampling and Sampling Distributions**:
   - Methods: Random Sampling, Stratified Sampling
   - Central Limit Theorem
@@ -108,6 +123,7 @@ This repository contains a comprehensive course designed to take learners from t
   - "Everything is significant" problem
 
 ### **6. Regression Analysis**
+
 - **Linear Regression**:
   - Simple and Multiple Linear Regression
   - Model Assumptions and Diagnostics
@@ -120,6 +136,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Addressing multicollinearity and overfitting
 
 ### **7. Exploratory Data Analysis (EDA)**
+
 - **Data Cleaning and Visualization**:
   - Pair Plots, Correlation Heatmaps
   - Outlier Detection (Z-scores, IQR)
@@ -127,6 +144,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Introduction to PCA (Principal Component Analysis) and t-SNE
 
 ### **8. Advanced Topics**
+
 - **Bayesian Statistics**:
   - Bayesian Inference and Updating
 - **Time Series Analysis**:
@@ -146,6 +164,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Mann-Whitney U Test, Kruskal-Wallis Test
 
 ### **9. Most Common Problems in Data Science**
+
 - **Data Cleaning Challenges**:
   - Handling Missing Values, Outliers, and Duplicates
 - **Bias Issues**:
@@ -160,6 +179,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Interpreting Results for Stakeholders
 
 ### **10. Most Rare Problems in Data Science**
+
 - **Sparse and Rare Data**:
   - Long-Tail Distributions, Multivariate Outliers
 - **Unusual Phenomena**:
@@ -172,6 +192,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Genomics, Astronomy, System Failures
 
 ### **11. Statistics in Machine Learning**
+
 - **Role of Statistics in ML**:
   - Data Preprocessing, Feature Engineering
 - **Evaluating Models**:
@@ -182,6 +203,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Practical examples with real-world data
 
 ### **12. Practical Applications**
+
 - **Real-World Case Studies**:
   - A/B Testing, Sales Forecasting, Customer Segmentation
 - **Business Context Applications**:
@@ -190,6 +212,7 @@ This repository contains a comprehensive course designed to take learners from t
   - Using libraries like Plotly or Dash
 
 ### **13. From Data to Decisions**
+
 - **Storytelling and Ethics**:
   - Communication and Ethical Considerations
 - **Data Storytelling Techniques**:
@@ -198,12 +221,14 @@ This repository contains a comprehensive course designed to take learners from t
   - Using techniques like Instrumental Variables and Propensity Score Matching
 
 ### **14. Final Project**
+
 - **End-to-End Data Science Project**:
   - Problem Definition, EDA, Statistical Analysis, and Results
 
 ---
 
 ## **Features**
+
 - **Interactive Learning**: Jupyter Notebooks for hands-on practice.
 - **Visual Insights**: Graphs and charts for better understanding.
 - **Modern Tooling**:
@@ -237,11 +262,13 @@ This repository contains a comprehensive course designed to take learners from t
 ## **Initial Setup**
 
 ### **On Linux**
+
 1. Install Python and Poetry.
 2. Clone this repository.
 3. Run `poetry install` to install dependencies.
 
 ### **On Windows**
+
 1. Use pyenv-win for Python installation.
 2. Install Poetry and clone this repository.
 3. Run `poetry install` to install dependencies.
@@ -251,17 +278,23 @@ This repository contains a comprehensive course designed to take learners from t
 ## **Using This Repo**
 
 ### **Run with Docker**
+
 1. Build the Docker image:
+
    ```bash
    docker build -t stats-ds-book -f dockerfiles/Dockerfile_stats_ds_book .
    or
    docker build --no-cache -t stats-ds-book -f dockerfiles/Dockerfile_stats_ds_book .
    ```
+
 2. Run the container:
+
    ```bash
    docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book bash
    ```
+
 3. Run the jupyter notebook:
+
    ```bash
    jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
    ```
@@ -269,43 +302,58 @@ This repository contains a comprehensive course designed to take learners from t
    ```bash
    docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
    ``` -->
-4. **Access Jupyter Notebook**:
+1. **Access Jupyter Notebook**:
    - Once the container is running, access Jupyter Notebook via:
-     ```
+
+     ```bash
      http://localhost:8888
      ```
+
    - Copy the token displayed in the terminal and use it to log in.
 
-5. **Build and Serve Jupyter Book**:
+2. **Build and Serve Jupyter Book**:
    - Inside the container, navigate to the book's directory:
+
      ```bash
      cd /app/book
      ```
+
    - Build the book using:
+
      ```bash
      jupyter-book build .
      ```
+
    - Serve the built book on a local server:
+
      ```bash
      python -m http.server 8000 --directory _build/html
      ```
+
    - Access the Jupyter Book in your browser at:
-     ```
+
+     ```bash
      http://localhost:8000
      ```
 
 ### **Run Locally with Poetry**
+
 1. Activate the Poetry environment:
+
    ```bash
    poetry shell
    ```
+
 2. Run Jupyter Notebook:
+
    ```bash
    jupyter notebook
    ```
 
 ### **Run Tests**
+
 Run all unit tests with:
+
 ```bash
 pytest
 ```
@@ -313,11 +361,15 @@ pytest
 ---
 
 ## **Updating a Package**
+
 1. Add or update a dependency:
+
    ```bash
    poetry add <package-name>
    ```
+
 2. Rebuild the Docker image if necessary:
+
    ```bash
    docker build -t stats-ds-book -f dockerfiles/Dockerfile .
    ```
@@ -325,6 +377,7 @@ pytest
 ---
 
 ## **Contributing**
+
 1. Fork this repository.
 2. Clone your fork and create a feature branch.
 3. Make your changes and commit with clear messages.
@@ -333,7 +386,9 @@ pytest
 ---
 
 ## **GitHub Actions**
+
 This repository uses GitHub Actions for:
+
 - **Linting**: Ensure code quality with pre-commit hooks.
 - **Testing**: Run all unit tests automatically.
 - **Book Deployment**: Deploy the Jupyter Book to GitHub Pages.
@@ -341,6 +396,7 @@ This repository uses GitHub Actions for:
 ---
 
 ## **Beyond the Course**
+
 - **Resources for Further Learning**:
   - Recommended Books, Online Courses, and Tutorials.
 - **Practice Platforms**:
