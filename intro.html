@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>Statistics for Data Science: From Zero to Hero &#8212; Statistics for Data Science</title>
   
   
   
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="1. Getting started" href="notebooks/1_getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -149,8 +149,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Statistics for Data Science - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Statistics for Data Science - Home"/>
   
   
 </a></div>
@@ -167,16 +167,30 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    Statistics for Data Science: From Zero to Hero
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/introduction.html">Introduction to statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/setting_up_environment.html">Setting up the environment</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="notebooks/1_getting_started.html">1. Getting started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/1_1_introduction.html">1.1 Introduction to statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/1_2_setting_up_environment.html">1.2 Setting up the environment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="notebooks/2_foundations_of_statistics.html">2. Foundations of statistics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/2_1_basic_terminology.html"><strong>Basic Terminology</strong></a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Archived Content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_old.html">Old Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Notebook Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Markdown and Notebooks</a></li>
 </ul>
 
     </div>
@@ -346,7 +360,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -357,11 +373,56 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>Statistics for Data Science: From Zero to Hero</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview"><strong>Course Overview</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents"><strong>Table of Contents</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-index"><strong>Course Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started"><strong>1. Getting Started</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundations-of-statistics"><strong>2. Foundations of Statistics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-essentials"><strong>3. Probability Essentials</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-distributions"><strong>4. Statistical Distributions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics"><strong>5. Inferential Statistics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-analysis"><strong>6. Regression Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis-eda"><strong>7. Exploratory Data Analysis (EDA)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics"><strong>8. Advanced Topics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-common-problems-in-data-science"><strong>9. Most Common Problems in Data Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-rare-problems-in-data-science"><strong>10. Most Rare Problems in Data Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-in-machine-learning"><strong>11. Statistics in Machine Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications"><strong>12. Practical Applications</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-data-to-decisions"><strong>13. From Data to Decisions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project"><strong>14. Final Project</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features"><strong>Features</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure"><strong>Folder Structure</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup"><strong>Initial Setup</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-linux"><strong>On Linux</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows"><strong>On Windows</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-repo"><strong>Using This Repo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-with-docker"><strong>Run with Docker</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-locally-with-poetry"><strong>Run Locally with Poetry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests"><strong>Run Tests</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-a-package"><strong>Updating a Package</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing"><strong>Contributing</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions"><strong>GitHub Actions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-the-course"><strong>Beyond the Course</strong></a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,22 +432,657 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Link to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistics-for-data-science-from-zero-to-hero">
+<h1>Statistics for Data Science: From Zero to Hero<a class="headerlink" href="#statistics-for-data-science-from-zero-to-hero" title="Link to this heading">#</a></h1>
+<section id="course-overview">
+<h2><strong>Course Overview</strong><a class="headerlink" href="#course-overview" title="Link to this heading">#</a></h2>
+<p>This repository contains a comprehensive course designed to take learners from the basics of statistics to advanced concepts, all tailored for applications in data science. With interactive Jupyter Notebooks, real-world case studies, and modern tooling, this course provides an engaging and practical approach to mastering statistics.</p>
+</section>
+<hr class="docutils" />
+<section id="table-of-contents">
+<h2><strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#statistics-for-data-science-from-zero-to-hero"><span class="xref myst">Statistics for Data Science: From Zero to Hero</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#course-overview"><span class="xref myst"><strong>Course Overview</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#table-of-contents"><span class="xref myst"><strong>Table of Contents</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#course-index"><span class="xref myst"><strong>Course Index</strong></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#1-getting-started"><span class="xref myst"><strong>1. Getting Started</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#2-foundations-of-statistics"><span class="xref myst"><strong>2. Foundations of Statistics</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#3-probability-essentials"><span class="xref myst"><strong>3. Probability Essentials</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#4-statistical-distributions"><span class="xref myst"><strong>4. Statistical Distributions</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#5-inferential-statistics"><span class="xref myst"><strong>5. Inferential Statistics</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#6-regression-analysis"><span class="xref myst"><strong>6. Regression Analysis</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#7-exploratory-data-analysis-eda"><span class="xref myst"><strong>7. Exploratory Data Analysis (EDA)</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#8-advanced-topics"><span class="xref myst"><strong>8. Advanced Topics</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#9-most-common-problems-in-data-science"><span class="xref myst"><strong>9. Most Common Problems in Data Science</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#10-most-rare-problems-in-data-science"><span class="xref myst"><strong>10. Most Rare Problems in Data Science</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#11-statistics-in-machine-learning"><span class="xref myst"><strong>11. Statistics in Machine Learning</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#12-practical-applications"><span class="xref myst"><strong>12. Practical Applications</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#13-from-data-to-decisions"><span class="xref myst"><strong>13. From Data to Decisions</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#14-final-project"><span class="xref myst"><strong>14. Final Project</strong></span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#features"><span class="xref myst"><strong>Features</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#folder-structure"><span class="xref myst"><strong>Folder Structure</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#initial-setup"><span class="xref myst"><strong>Initial Setup</strong></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#on-linux"><span class="xref myst"><strong>On Linux</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#on-windows"><span class="xref myst"><strong>On Windows</strong></span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#using-this-repo"><span class="xref myst"><strong>Using This Repo</strong></span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#run-with-docker"><span class="xref myst"><strong>Run with Docker</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#run-locally-with-poetry"><span class="xref myst"><strong>Run Locally with Poetry</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#run-tests"><span class="xref myst"><strong>Run Tests</strong></span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#updating-a-package"><span class="xref myst"><strong>Updating a Package</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#contributing"><span class="xref myst"><strong>Contributing</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#github-actions"><span class="xref myst"><strong>GitHub Actions</strong></span></a></p></li>
+<li><p><a class="reference internal" href="#beyond-the-course"><span class="xref myst"><strong>Beyond the Course</strong></span></a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="course-index">
+<h2><strong>Course Index</strong><a class="headerlink" href="#course-index" title="Link to this heading">#</a></h2>
+<section id="getting-started">
+<h3><strong>1. Getting Started</strong><a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Introduction</strong>:</p>
+<ul>
+<li><p>What is Statistics? Why is it important for Data Science?</p></li>
+<li><p>Overview of the course structure and objectives.</p></li>
+</ul>
+</li>
+<li><p><strong>Setting Up the Environment</strong>:</p>
+<ul>
+<li><p>Python setup (Jupyter, Pandas, NumPy, Matplotlib, Seaborn, Statsmodels, Scipy).</p></li>
+<li><p>Introduction to statistical tools and datasets.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="foundations-of-statistics">
+<h3><strong>2. Foundations of Statistics</strong><a class="headerlink" href="#foundations-of-statistics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Basic Terminology</strong>:</p>
+<ul>
+<li><p>Population vs. Sample</p></li>
+<li><p>Descriptive vs. Inferential statistics</p></li>
+<li><p>Parameters vs. Statistics</p></li>
+<li><p>Types of Data: Categorical, Numerical, Ordinal, Interval, Ratio, Time Series</p></li>
+<li><p>Levels of measurement</p></li>
+<li><p>Variables</p></li>
+<li><p>Correlation vs causation</p></li>
+</ul>
+</li>
+<li><p><strong>Descriptive Statistics</strong>:</p>
+<ul>
+<li><p>Central Tendency measurements: Mean, Median, Mode</p></li>
+<li><p>Variability measurements: Range, Variance, Standard Deviation</p></li>
+<li><p>Skewness and Kurtosis</p></li>
+</ul>
+</li>
+<li><p><strong>Data Visualization</strong>:</p>
+<ul>
+<li><p>Graphical Representations: Histograms, Boxplots, Scatterplots, Heatmaps</p></li>
+</ul>
+</li>
+<li><p><strong>Sampling methods</strong>:</p>
+<ul>
+<li><p>Simple Random Sampling</p></li>
+<li><p>Stratified Sampling</p></li>
+<li><p>Cluster Sampling</p></li>
+<li><p>Systematic Sampling</p></li>
+</ul>
+</li>
+<li><p><strong>Error Metrics</strong>:</p>
+<ul>
+<li><p>Absolute and Relative Error in descriptive statistics</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="probability-essentials">
+<h3><strong>3. Probability Essentials</strong><a class="headerlink" href="#probability-essentials" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>What is Probability?</strong></p>
+<ul>
+<li><p>Definitions and Basic Rules</p></li>
+<li><p>Conditional Probability</p></li>
+</ul>
+</li>
+<li><p><strong>Advanced Probability Topics</strong>:</p>
+<ul>
+<li><p>Joint and Marginal Probability</p></li>
+<li><p>Independence vs. Dependence of Events</p></li>
+</ul>
+</li>
+<li><p><strong>Bayes’ Theorem</strong>:</p>
+<ul>
+<li><p>Intuition and Applications</p></li>
+</ul>
+</li>
+<li><p><strong>Probability in Data Science</strong>:</p>
+<ul>
+<li><p>Practical applications like anomaly detection and recommendation systems.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="statistical-distributions">
+<h3><strong>4. Statistical Distributions</strong><a class="headerlink" href="#statistical-distributions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Discrete Distributions</strong>:</p>
+<ul>
+<li><p>Binomial Distribution: Concepts, Applications, and Examples</p></li>
+<li><p>Poisson Distribution: Modeling Rare Events</p></li>
+<li><p>Geometric and Hypergeometric Distributions</p></li>
+</ul>
+</li>
+<li><p><strong>Continuous Distributions</strong>:</p>
+<ul>
+<li><p>Normal Distribution: Properties, Z-scores, and Applications</p></li>
+<li><p>Uniform, Exponential, Gamma, and Beta Distributions</p></li>
+</ul>
+</li>
+<li><p><strong>Multivariate Distributions</strong>:</p>
+<ul>
+<li><p>Multivariate Normal Distribution, Covariance, and Correlation Matrices</p></li>
+</ul>
+</li>
+<li><p><strong>Advanced Continuous Distributions</strong>:</p>
+<ul>
+<li><p>Log-Normal, Weibull, and Pareto Distributions</p></li>
+</ul>
+</li>
+<li><p><strong>Goodness-of-Fit Testing</strong>:</p>
+<ul>
+<li><p>Chi-Square Test for Distribution Fit</p></li>
+</ul>
+</li>
+<li><p><strong>Applications</strong>:</p>
+<ul>
+<li><p>Simulating Data and Fitting Distributions to Real-World Data</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="inferential-statistics">
+<h3><strong>5. Inferential Statistics</strong><a class="headerlink" href="#inferential-statistics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sampling and Sampling Distributions</strong>:</p>
+<ul>
+<li><p>Methods: Random Sampling, Stratified Sampling</p></li>
+<li><p>Central Limit Theorem</p></li>
+</ul>
+</li>
+<li><p><strong>Confidence Intervals</strong>:</p>
+<ul>
+<li><p>Calculating and interpreting confidence intervals.</p></li>
+</ul>
+</li>
+<li><p><strong>Effect Size</strong>:</p>
+<ul>
+<li><p>Understanding and calculating Cohen’s d, Pearson’s r</p></li>
+</ul>
+</li>
+<li><p><strong>Hypothesis Testing</strong>:</p>
+<ul>
+<li><p>Null and Alternative Hypotheses</p></li>
+<li><p>Z-tests, T-tests, ANOVA, Chi-Square Tests</p></li>
+</ul>
+</li>
+<li><p><strong>Common Problems</strong></p>
+<ul>
+<li><p>“Everything is significant” problem</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="regression-analysis">
+<h3><strong>6. Regression Analysis</strong><a class="headerlink" href="#regression-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Linear Regression</strong>:</p>
+<ul>
+<li><p>Simple and Multiple Linear Regression</p></li>
+<li><p>Model Assumptions and Diagnostics</p></li>
+</ul>
+</li>
+<li><p><strong>Metrics</strong>:</p>
+<ul>
+<li><p>R-squared, Adjusted R-squared, RMSE, MAE</p></li>
+</ul>
+</li>
+<li><p><strong>Advanced Regression Techniques</strong>:</p>
+<ul>
+<li><p>Ridge and Lasso Regression</p></li>
+<li><p>Logistic Regression for binary outcomes</p></li>
+</ul>
+</li>
+<li><p><strong>Regularization</strong>:</p>
+<ul>
+<li><p>Addressing multicollinearity and overfitting</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="exploratory-data-analysis-eda">
+<h3><strong>7. Exploratory Data Analysis (EDA)</strong><a class="headerlink" href="#exploratory-data-analysis-eda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Data Cleaning and Visualization</strong>:</p>
+<ul>
+<li><p>Pair Plots, Correlation Heatmaps</p></li>
+<li><p>Outlier Detection (Z-scores, IQR)</p></li>
+</ul>
+</li>
+<li><p><strong>Dimensionality Reduction</strong>:</p>
+<ul>
+<li><p>Introduction to PCA (Principal Component Analysis) and t-SNE</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="advanced-topics">
+<h3><strong>8. Advanced Topics</strong><a class="headerlink" href="#advanced-topics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Bayesian Statistics</strong>:</p>
+<ul>
+<li><p>Bayesian Inference and Updating</p></li>
+</ul>
+</li>
+<li><p><strong>Time Series Analysis</strong>:</p>
+<ul>
+<li><p>Components of Time Series (Trend, Seasonality)</p></li>
+<li><p>Stationarity and Differencing</p></li>
+<li><p>ARIMA Models</p></li>
+<li><p>Forecasting with Prophet</p></li>
+</ul>
+</li>
+<li><p><strong>Survival Analysis</strong>:</p>
+<ul>
+<li><p>Kaplan-Meier</p></li>
+<li><p>Hazard Functions</p></li>
+<li><p>Cox Proportional Hazard Models</p></li>
+</ul>
+</li>
+<li><p><strong>Resampling Techniques</strong>:</p>
+<ul>
+<li><p>Bootstrapping</p></li>
+<li><p>Cross-Validation</p></li>
+<li><p>Jackknife method</p></li>
+</ul>
+</li>
+<li><p><strong>Non-Parametric Statistics</strong>:</p>
+<ul>
+<li><p>Mann-Whitney U Test, Kruskal-Wallis Test</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="most-common-problems-in-data-science">
+<h3><strong>9. Most Common Problems in Data Science</strong><a class="headerlink" href="#most-common-problems-in-data-science" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Data Cleaning Challenges</strong>:</p>
+<ul>
+<li><p>Handling Missing Values, Outliers, and Duplicates</p></li>
+</ul>
+</li>
+<li><p><strong>Bias Issues</strong>:</p>
+<ul>
+<li><p>Sampling Bias, Data Leakage</p></li>
+</ul>
+</li>
+<li><p><strong>Scalability</strong>:</p>
+<ul>
+<li><p>Optimizing Pipelines for Large Datasets</p></li>
+</ul>
+</li>
+<li><p><strong>Feature Selection Techniques</strong>:</p>
+<ul>
+<li><p>Statistical methods for feature importance</p></li>
+</ul>
+</li>
+<li><p><strong>Multi-collinearity Detection</strong>:</p>
+<ul>
+<li><p>Variance Inflation Factor (VIF)</p></li>
+</ul>
+</li>
+<li><p><strong>Communication</strong>:</p>
+<ul>
+<li><p>Interpreting Results for Stakeholders</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="most-rare-problems-in-data-science">
+<h3><strong>10. Most Rare Problems in Data Science</strong><a class="headerlink" href="#most-rare-problems-in-data-science" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Sparse and Rare Data</strong>:</p>
+<ul>
+<li><p>Long-Tail Distributions, Multivariate Outliers</p></li>
+</ul>
+</li>
+<li><p><strong>Unusual Phenomena</strong>:</p>
+<ul>
+<li><p>Simpson’s Paradox, Extreme Class Imbalances</p></li>
+</ul>
+</li>
+<li><p><strong>Handling Non-Stationary Data</strong>:</p>
+<ul>
+<li><p>Time-evolving distributions and drift detection</p></li>
+</ul>
+</li>
+<li><p><strong>Sparse Data Solutions</strong>:</p>
+<ul>
+<li><p>Matrix Factorization Techniques</p></li>
+</ul>
+</li>
+<li><p><strong>Niche Applications</strong>:</p>
+<ul>
+<li><p>Genomics, Astronomy, System Failures</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="statistics-in-machine-learning">
+<h3><strong>11. Statistics in Machine Learning</strong><a class="headerlink" href="#statistics-in-machine-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Role of Statistics in ML</strong>:</p>
+<ul>
+<li><p>Data Preprocessing, Feature Engineering</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluating Models</strong>:</p>
+<ul>
+<li><p>Confusion Matrix, Precision, Recall, AUC-ROC</p></li>
+</ul>
+</li>
+<li><p><strong>Statistical Foundations of ML Algorithms</strong>:</p>
+<ul>
+<li><p>Gradient Descent, Bayesian Optimization</p></li>
+</ul>
+</li>
+<li><p><strong>Bias-Variance Tradeoff</strong>:</p>
+<ul>
+<li><p>Practical examples with real-world data</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="practical-applications">
+<h3><strong>12. Practical Applications</strong><a class="headerlink" href="#practical-applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Real-World Case Studies</strong>:</p>
+<ul>
+<li><p>A/B Testing, Sales Forecasting, Customer Segmentation</p></li>
+</ul>
+</li>
+<li><p><strong>Business Context Applications</strong>:</p>
+<ul>
+<li><p>Risk Analysis, Fraud Detection</p></li>
+</ul>
+</li>
+<li><p><strong>Custom Visualizations</strong>:</p>
+<ul>
+<li><p>Using libraries like Plotly or Dash</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="from-data-to-decisions">
+<h3><strong>13. From Data to Decisions</strong><a class="headerlink" href="#from-data-to-decisions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Storytelling and Ethics</strong>:</p>
+<ul>
+<li><p>Communication and Ethical Considerations</p></li>
+</ul>
+</li>
+<li><p><strong>Data Storytelling Techniques</strong>:</p>
+<ul>
+<li><p>Structuring narratives for different audiences</p></li>
+</ul>
+</li>
+<li><p><strong>Causal Inference</strong>:</p>
+<ul>
+<li><p>Using techniques like Instrumental Variables and Propensity Score Matching</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="final-project">
+<h3><strong>14. Final Project</strong><a class="headerlink" href="#final-project" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>End-to-End Data Science Project</strong>:</p>
+<ul>
+<li><p>Problem Definition, EDA, Statistical Analysis, and Results</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="features">
+<h2><strong>Features</strong><a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Interactive Learning</strong>: Jupyter Notebooks for hands-on practice.</p></li>
+<li><p><strong>Visual Insights</strong>: Graphs and charts for better understanding.</p></li>
+<li><p><strong>Modern Tooling</strong>:</p>
+<ul>
+<li><p>Docker for consistent development.</p></li>
+<li><p>Poetry for dependency management.</p></li>
+<li><p>Pre-commit hooks for code quality.</p></li>
+<li><p>GitHub Actions for automation.</p></li>
+</ul>
+</li>
+<li><p><strong>Real-World Applications</strong>: Practical use cases and projects.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="folder-structure">
+<h2><strong>Folder Structure</strong><a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h2>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>.
+├── LICENSE                  # License file for the project
+├── README.md                # Main documentation for the repository
+├── book                     # Jupyter Book content
+│   ├── _build               # Built files for the Jupyter Book
+│   ├── _config.yml          # Global configuration
+│   ├── _toc.yml             # Table of contents
+│   └── ... (source content)
+├── notebooks                # Interactive notebooks
+├── poetry.lock              # Poetry lock file
+├── pyproject.toml           # Poetry configuration
+└── tests                    # Unit tests for the project
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="initial-setup">
+<h2><strong>Initial Setup</strong><a class="headerlink" href="#initial-setup" title="Link to this heading">#</a></h2>
+<section id="on-linux">
+<h3><strong>On Linux</strong><a class="headerlink" href="#on-linux" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Install Python and Poetry.</p></li>
+<li><p>Clone this repository.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> to install dependencies.</p></li>
+</ol>
+</section>
+<section id="on-windows">
+<h3><strong>On Windows</strong><a class="headerlink" href="#on-windows" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Use pyenv-win for Python installation.</p></li>
+<li><p>Install Poetry and clone this repository.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> to install dependencies.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="using-this-repo">
+<h2><strong>Using This Repo</strong><a class="headerlink" href="#using-this-repo" title="Link to this heading">#</a></h2>
+<section id="run-with-docker">
+<h3><strong>Run with Docker</strong><a class="headerlink" href="#run-with-docker" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Build the Docker image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>stats-ds-book<span class="w"> </span>-f<span class="w"> </span>dockerfiles/Dockerfile_stats_ds_book<span class="w"> </span>.
+or
+docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span>stats-ds-book<span class="w"> </span>-f<span class="w"> </span>dockerfiles/Dockerfile_stats_ds_book<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Run the container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/app<span class="w"> </span>stats-ds-book<span class="w"> </span>bash
+</pre></div>
+</div>
+</li>
+<li><p>Run the jupyter notebook:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="o">=</span><span class="m">8888</span><span class="w"> </span>--no-browser<span class="w"> </span>--allow-root
+</pre></div>
+</div>
+</li>
+</ol>
+<!-- 3. Run the jupyter book:
+   ```bash
+   docker run -it -p 8888:8888 -p 8000:8000 -v $(pwd):/app stats-ds-book
+   ``` -->
+<ol class="arabic">
+<li><p><strong>Access Jupyter Notebook</strong>:</p>
+<ul>
+<li><p>Once the container is running, access Jupyter Notebook via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost:8888
+</pre></div>
+</div>
+</li>
+<li><p>Copy the token displayed in the terminal and use it to log in.</p></li>
+</ul>
+</li>
+<li><p><strong>Build and Serve Jupyter Book</strong>:</p>
+<ul>
+<li><p>Inside the container, navigate to the book’s directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/app/book
+</pre></div>
+</div>
+</li>
+<li><p>Build the book using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Serve the built book on a local server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--directory<span class="w"> </span>_build/html
+</pre></div>
+</div>
+</li>
+<li><p>Access the Jupyter Book in your browser at:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost:8000
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="run-locally-with-poetry">
+<h3><strong>Run Locally with Poetry</strong><a class="headerlink" href="#run-locally-with-poetry" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Activate the Poetry environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>shell
+</pre></div>
+</div>
+</li>
+<li><p>Run Jupyter Notebook:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="run-tests">
+<h3><strong>Run Tests</strong><a class="headerlink" href="#run-tests" title="Link to this heading">#</a></h3>
+<p>Run all unit tests with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="updating-a-package">
+<h2><strong>Updating a Package</strong><a class="headerlink" href="#updating-a-package" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Add or update a dependency:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>&lt;package-name&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Rebuild the Docker image if necessary:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>stats-ds-book<span class="w"> </span>-f<span class="w"> </span>dockerfiles/Dockerfile<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="contributing">
+<h2><strong>Contributing</strong><a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Fork this repository.</p></li>
+<li><p>Clone your fork and create a feature branch.</p></li>
+<li><p>Make your changes and commit with clear messages.</p></li>
+<li><p>Push your branch and open a Pull Request.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="github-actions">
+<h2><strong>GitHub Actions</strong><a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h2>
+<p>This repository uses GitHub Actions for:</p>
+<ul class="simple">
+<li><p><strong>Linting</strong>: Ensure code quality with pre-commit hooks.</p></li>
+<li><p><strong>Testing</strong>: Run all unit tests automatically.</p></li>
+<li><p><strong>Book Deployment</strong>: Deploy the Jupyter Book to GitHub Pages.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="beyond-the-course">
+<h2><strong>Beyond the Course</strong><a class="headerlink" href="#beyond-the-course" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Resources for Further Learning</strong>:</p>
+<ul>
+<li><p>Recommended Books, Online Courses, and Tutorials.</p></li>
+</ul>
+</li>
+<li><p><strong>Practice Platforms</strong>:</p>
+<ul>
+<li><p>Kaggle, DataCamp, Analytics Vidhya.</p></li>
+</ul>
+</li>
+<li><p><strong>Staying Updated</strong>:</p>
+<ul>
+<li><p>Communities, Blogs, and Research Papers.</p></li>
+</ul>
+</li>
+</ul>
 <p>Check out the content pages bundled with this sample book to see more.</p>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/introduction.html">Introduction to statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/setting_up_environment.html">Setting up the environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/1_getting_started.html">1. Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/2_foundations_of_statistics.html">2. Foundations of statistics</a></li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Archived Content</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro_old.html">Old Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Notebook Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Markdown and Notebooks</a></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -420,11 +1116,11 @@ It does not go in-depth into any particular topic - check out <a class="referenc
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="markdown.html"
+       href="notebooks/1_getting_started.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">1. Getting started</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -435,6 +1131,59 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             
             
               
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview"><strong>Course Overview</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents"><strong>Table of Contents</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-index"><strong>Course Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started"><strong>1. Getting Started</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundations-of-statistics"><strong>2. Foundations of Statistics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-essentials"><strong>3. Probability Essentials</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-distributions"><strong>4. Statistical Distributions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferential-statistics"><strong>5. Inferential Statistics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-analysis"><strong>6. Regression Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis-eda"><strong>7. Exploratory Data Analysis (EDA)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-topics"><strong>8. Advanced Topics</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-common-problems-in-data-science"><strong>9. Most Common Problems in Data Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-rare-problems-in-data-science"><strong>10. Most Rare Problems in Data Science</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics-in-machine-learning"><strong>11. Statistics in Machine Learning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications"><strong>12. Practical Applications</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-data-to-decisions"><strong>13. From Data to Decisions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project"><strong>14. Final Project</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features"><strong>Features</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure"><strong>Folder Structure</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup"><strong>Initial Setup</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-linux"><strong>On Linux</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows"><strong>On Windows</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-repo"><strong>Using This Repo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-with-docker"><strong>Run with Docker</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-locally-with-poetry"><strong>Run Locally with Poetry</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-tests"><strong>Run Tests</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-a-package"><strong>Updating a Package</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing"><strong>Contributing</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions"><strong>GitHub Actions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-the-course"><strong>Beyond the Course</strong></a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -444,7 +1193,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Angel Rafael Ortega Ramírez
 </p>
 
   </div>
@@ -454,7 +1203,7 @@ By The Jupyter Book Community
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

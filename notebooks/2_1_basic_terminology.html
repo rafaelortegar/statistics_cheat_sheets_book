@@ -1,0 +1,2397 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Basic Terminology &#8212; Statistics for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/2_1_basic_terminology';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="2_2_descriptive_statistics.html" />
+    <link rel="prev" title="2. Foundations of Statistics" href="2_foundations_of_statistics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Statistics for Data Science - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Statistics for Data Science - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Statistics for Data Science: From Zero to Hero
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course content</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_getting_started.html">1. Getting started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_1_introduction.html">1.1 Introduction to statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_2_setting_up_environment.html">1.2 Setting up the environment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2_foundations_of_statistics.html">2. Foundations of statistics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><strong>Basic Terminology</strong></a></li>
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Archived Content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro_old.html">Old Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebook Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Markdown and Notebooks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/2_1_basic_terminology.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/2_1_basic_terminology.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic Terminology</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Basic Terminology</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-vs-sample"><strong>1. Population vs. Sample</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-sample"><strong>Why Use a Sample?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-for-practice">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-bias-types"><strong>2. Bias and Bias Types</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-bias-important"><strong>Why is Bias Important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-bias"><strong>Common Types of Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-minimize-bias"><strong>How to Minimize Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scenario"><strong>Example Scenario</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📝 <strong>Exercises for Practice</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-usage-examples"><strong>Python Usage Examples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-vs-inferential-statistics"><strong>3. Descriptive vs. Inferential statistics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-purpose">1. Definition and Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-used">2. Techniques Used</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scope">3. Data Scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-it"><strong>Why do we use it?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-vs-statistics"><strong>4. Parameters vs. Statistics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-differences">1. Definition and Differences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">2. Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters"><strong>Parameters:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics"><strong>Statistics:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-parameters-and-statistics">3. Relationship Between Parameters and Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">4. Practical Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-the-distinction">5. Importance of the Distinction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data"><strong>5. Types of Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data"><strong>1. Categorical Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data"><strong>2. Numerical Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinal-data"><strong>3. Ordinal Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-data"><strong>4. Interval Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-data"><strong>5. Ratio Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data"><strong>6. Time Series Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-measurement"><strong>6. Levels of measurement</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-classifying-data"><strong>Example: Classifying Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>7. Variables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-confounding-variables-matter"><strong>Why Do Confounding Variables Matter?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-handle-confounding-variables"><strong>How to Handle Confounding Variables?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-research"><strong>Example in research:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-vs-causation"><strong>8. Correlation vs. causation</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-differences"><strong>Key Differences:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls"><strong>Common Pitfalls:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">📝 <strong>Exercises for Practice</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>6. Python Usage Examples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-terminology">
+<h1><strong>Basic Terminology</strong><a class="headerlink" href="#basic-terminology" title="Link to this heading">#</a></h1>
+<p>There are four key concepts that we need to understand in order to grasp the fundamentals of statistics:</p>
+<ul class="simple">
+<li><p><strong>Data:</strong> Refers to measurements or, more generally, to documented observations gathered through an experiment or phenomenon.</p></li>
+<li><p><strong>Experimental unit (or unit of analysis):</strong> In statistics, this refers to the individual element or entity that is the subject of analysis in a statistical study. These units serve as the fundamental components from which data is collected and analyzed.</p></li>
+<li><p><strong>Response variable:</strong> A characteristic of interest observed in the experimental unit, which is susceptible to being quantified or recorded in any form, not necessarily in numerical terms.</p></li>
+<li><p><strong>Statistical population:</strong> The totality of values for a response variable across the entire population under study.</p></li>
+</ul>
+<section id="population-vs-sample">
+<h2><strong>1. Population vs. Sample</strong><a class="headerlink" href="#population-vs-sample" title="Link to this heading">#</a></h2>
+<p>In a perfect world environment, we would love to understand all study units. However, in the real world, this is often not possible. With this in mind, we distinguish between population and sample as follows:</p>
+<ul class="simple">
+<li><p><strong>Population</strong>: The entire group of individuals or observations that you want to study. Studying the entire population is often impractical due to its size and complexity.</p></li>
+<li><p><strong>Sample</strong>: A subset of the population selected for analysis. Samples are used to make inferences about the population, provided they are representative.</p></li>
+</ul>
+<p><img alt="image.png" src="../_images/foundations_of_statistics_01.png" /></p>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p><strong>Population</strong>: All customers of an e-commerce website.</p></li>
+<li><p><strong>Sample</strong>: 1,000 customers selected randomly from the website’s database.</p></li>
+</ul>
+<section id="why-use-a-sample">
+<h3><strong>Why Use a Sample?</strong><a class="headerlink" href="#why-use-a-sample" title="Link to this heading">#</a></h3>
+<p>For practical reasons:</p>
+<ul class="simple">
+<li><p>Studying the entire population is often impractical or impossible.</p></li>
+<li><p>Accessibility issues may prevent studying the entire population.</p></li>
+<li><p>Sampling is faster, more cost-effective, and easier to analyze.</p></li>
+</ul>
+<p>The size of the population relative to the sample is not always the most critical factor; what matters most is that the sample is selected randomly and is representative of the population to ensure valid conclusions.</p>
+</section>
+<hr class="docutils" />
+<section id="exercises-for-practice">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#exercises-for-practice" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Which of the following best describes a population?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) A group of randomly selected individuals used for analysis</p></li>
+<li><p class="sd-card-text">B) The entire group of individuals or observations you want to study</p></li>
+<li><p class="sd-card-text">C) A subset of individuals chosen from a group</p></li>
+<li><p class="sd-card-text">D) The statistical summary of a dataset</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">What is the primary purpose of using a sample instead of a population?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) It is more representative</p></li>
+<li><p class="sd-card-text">B) It provides exact data without errors</p></li>
+<li><p class="sd-card-text">C) It is often more practical and cost-effective</p></li>
+<li><p class="sd-card-text">D) It always gives the same results as the population</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following factors is most important when selecting a sample?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Its representativeness</p></li>
+<li><p class="sd-card-text">B) Its size relative to the population</p></li>
+<li><p class="sd-card-text">C) The convenience of collecting data</p></li>
+<li><p class="sd-card-text">D) The number of data points collected</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> A</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A sample always provides the same results as the population.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">The entire customer base of an online store is an example of a population.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Sampling is often more cost-effective and easier to analyze than studying the entire population.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">The size of the population relative to the sample is always the most critical factor in ensuring valid conclusions.<br />
+<strong>False</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">What are the key differences between a population and a sample?</p></li>
+<li><p class="sd-card-text">Why is it impractical to study an entire population in most cases?</p></li>
+<li><p class="sd-card-text">Provide an example of a population and a corresponding sample in the context of healthcare.</p></li>
+<li><p class="sd-card-text">What makes a sample representative of a population?</p></li>
+<li><p class="sd-card-text">Why is randomness important in selecting a sample?</p></li>
+<li><p class="sd-card-text">Identify the Population and Sample in the following scenarios:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A survey is conducted to determine the favorite type of coffee among 1,000 randomly
+selected customers at a coffee shop chain.</p></li>
+<li><p class="sd-card-text">A study measures the weight of 50 apples selected from a shipment of 10,000 apples.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A university wants to analyze student satisfaction with campus facilities. The total student population is 20,000. If they survey 500 randomly selected students, what is the population, and what is the sample?</p></li>
+<li><p class="sd-card-text">A marketing team wants to understand customer preferences for a new product line. They send a survey to 2,000 customers selected from a database of 50,000. What steps should they take to ensure their sample is representative?</p></li>
+<li><p class="sd-card-text">Suppose you are conducting a study on the eating habits of teenagers in your city. What challenges might you face in studying the entire population, and how can sampling help?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A researcher wants to determine the average income of people in a large metropolitan area. They survey 1,000 randomly chosen residents from different neighborhoods.</p>
+<ul class="simple">
+<li><p class="sd-card-text">What potential biases could affect the sample?</p></li>
+<li><p class="sd-card-text">How can the researcher ensure the sample is representative of the population?</p></li>
+<li><p class="sd-card-text">What could be the consequences of using a non-representative sample in drawing conclusions?</p></li>
+</ul>
+</div>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="bias-and-bias-types">
+<h2><strong>2. Bias and Bias Types</strong><a class="headerlink" href="#bias-and-bias-types" title="Link to this heading">#</a></h2>
+<p>Bias refers to systematic errors in data collection, analysis, interpretation, or presentation that can lead to inaccurate conclusions. It can occur at any stage of a statistical study and can significantly impact the validity of results.</p>
+<section id="why-is-bias-important">
+<h3><strong>Why is Bias Important?</strong><a class="headerlink" href="#why-is-bias-important" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bias can distort findings and lead to incorrect conclusions.</p></li>
+<li><p>Understanding bias helps ensure the reliability and credibility of research.</p></li>
+<li><p>Identifying and minimizing bias improves the quality of decision-making based on data.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="common-types-of-bias">
+<h3><strong>Common Types of Bias</strong><a class="headerlink" href="#common-types-of-bias" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Selection Bias:</strong><br />
+Occurs when the sample chosen for analysis does not accurately represent the target population. This can result in over- or under-representation of certain groups.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> Conducting a survey only among social media users to assess overall public opinion.</p></li>
+<li><p><strong>Self-Selection Bias:</strong><br />
+A special type of selection bias that happens when individuals choose to participate in a study based on their interest, motivation, or other personal characteristics.</p>
+<ul>
+<li><p><strong>Example:</strong> An online survey about health habits might attract health-conscious individuals, leading to skewed results.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Sampling Bias:</strong><br />
+A subset of selection bias where certain members of the population are more likely to be included in the sample than others.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> Conducting a phone survey that excludes people without landlines.</p></li>
+</ul>
+</li>
+<li><p><strong>Measurement Bias (or Information Bias):</strong><br />
+Arises when data collection methods systematically misrepresent the actual values.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> A faulty scale consistently under-reporting weight measurements.</p></li>
+</ul>
+</li>
+<li><p><strong>Response Bias:</strong><br />
+Occurs when participants provide inaccurate or false responses due to social desirability, misunderstanding, or survey design.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> People underreporting alcohol consumption in surveys.</p></li>
+</ul>
+</li>
+<li><p><strong>Confirmation Bias:</strong><br />
+The tendency to interpret data in a way that confirms pre-existing beliefs or hypotheses.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> A researcher focusing only on data that supports their hypothesis and ignoring contradictory evidence.</p></li>
+</ul>
+</li>
+<li><p><strong>Observer Bias:</strong><br />
+Happens when researchers subconsciously influence the outcome of an experiment based on their expectations.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> A doctor interpreting a patient’s symptoms based on their preconceived notion of the diagnosis.</p></li>
+</ul>
+</li>
+<li><p><strong>Publication Bias:</strong><br />
+The tendency for journals to publish only positive or significant results, leading to a skewed understanding of research outcomes.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> Studies showing no effect of a treatment are less likely to be published.</p></li>
+</ul>
+</li>
+<li><p><strong>Survivorship Bias:</strong><br />
+Occurs when only successful cases are considered, ignoring those that failed or were excluded.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> Studying successful companies without analyzing those that went bankrupt.</p></li>
+</ul>
+</li>
+<li><p><strong>Recall Bias:</strong><br />
+When participants fail to accurately remember past events, leading to skewed data.</p>
+<ul class="simple">
+<li><p><strong>Example:</strong> Patients inaccurately recalling their diet habits in a nutritional study.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="how-to-minimize-bias">
+<h3><strong>How to Minimize Bias</strong><a class="headerlink" href="#how-to-minimize-bias" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use <strong>random sampling</strong> to ensure representativeness.</p></li>
+<li><p>Apply <strong>blinding techniques</strong> in experiments to reduce observer bias.</p></li>
+<li><p>Use <strong>standardized data collection methods</strong> to minimize measurement errors.</p></li>
+<li><p>Conduct <strong>pilot studies</strong> to identify potential biases early.</p></li>
+<li><p>Be aware of personal biases and use objective analysis methods.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="example-scenario">
+<h3><strong>Example Scenario</strong><a class="headerlink" href="#example-scenario" title="Link to this heading">#</a></h3>
+<p>Imagine a company conducting a customer satisfaction survey but only selecting participants from their loyalty program.</p>
+<ul class="simple">
+<li><p><strong>Potential Bias:</strong> Selection bias (loyal customers may have a more positive perception).</p></li>
+<li><p><strong>Solution:</strong> Randomly sample customers from all segments to get a balanced view.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Which of the following is an example of selection bias?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Using a random sampling method to collect data.</p></li>
+<li><p class="sd-card-text">B) Surveying only college students about national political opinions.</p></li>
+<li><p class="sd-card-text">C) Collecting data using a precise measuring instrument.</p></li>
+<li><p class="sd-card-text">D) Publishing research with negative results.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Measurement bias occurs when:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) The sample does not represent the entire population.</p></li>
+<li><p class="sd-card-text">B) Participants provide inaccurate answers.</p></li>
+<li><p class="sd-card-text">C) The data collection tool consistently misrepresents data.</p></li>
+<li><p class="sd-card-text">D) The researcher influences the results subconsciously.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Selection bias occurs when the data collection tool misrepresents values.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Random sampling helps in reducing selection bias.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Survivorship bias occurs when we analyze only successful cases and ignore failures.<br />
+<strong>True</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Define and provide an example of confirmation bias.</p></li>
+<li><p class="sd-card-text">What steps can be taken to reduce response bias in a survey?</p></li>
+<li><p class="sd-card-text">Explain how publication bias can affect scientific knowledge.</p></li>
+<li><p class="sd-card-text">Why is it important to minimize bias in data analysis?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A health researcher collects data from patients in a single hospital to estimate national health trends. What type of bias might this introduce, and how can it be mitigated?</p></li>
+<li><p class="sd-card-text">A company collects performance feedback from employees who volunteer to participate. What type of bias may be present, and what could be done to avoid it?</p></li>
+<li><p class="sd-card-text">How can survivorship bias affect investment decisions when analyzing successful companies?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider a situation where a social media platform analyzes user engagement by looking only at active users.</p>
+<ul class="simple">
+<li><p class="sd-card-text">What bias might be affecting their analysis?</p></li>
+<li><p class="sd-card-text">How could they improve their data collection to gain a more accurate understanding?</p></li>
+<li><p class="sd-card-text">What are the potential consequences of ignoring inactive users in their analysis?</p></li>
+</ul>
+</div>
+</details><section id="python-usage-examples">
+<h4><strong>Python Usage Examples</strong><a class="headerlink" href="#python-usage-examples" title="Link to this heading">#</a></h4>
+<p>Python can help identify and address bias in datasets through statistical analysis and visualization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Sample biased dataset (survey from social media users)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span>
+    <span class="s2">&quot;Income&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20000</span><span class="p">,</span> <span class="mi">25000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">70000</span><span class="p">,</span> <span class="mi">75000</span><span class="p">,</span> <span class="mi">80000</span><span class="p">,</span> <span class="mi">85000</span><span class="p">],</span>
+    <span class="s2">&quot;Survey_Source&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Social Media&quot;</span><span class="p">,</span> <span class="s2">&quot;Social Media&quot;</span><span class="p">,</span> <span class="s2">&quot;Social Media&quot;</span><span class="p">,</span> <span class="s2">&quot;Direct Mail&quot;</span><span class="p">,</span> <span class="s2">&quot;Direct Mail&quot;</span><span class="p">,</span> <span class="s2">&quot;Direct Mail&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">,</span> <span class="s2">&quot;Newspaper&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Check representation by source</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Survey Respondents by Source&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Analyze potential bias by income levels</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Income&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Income Distribution by Survey Source&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Solution: Resampling techniques or weighting methods</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
+
+<span class="c1"># Oversample underrepresented groups</span>
+<span class="n">df_balanced</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Social Media&quot;</span><span class="p">],</span>
+    <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Social Media&quot;</span><span class="p">],</span>
+     <span class="n">df_balanced</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Sample biased dataset (survey from social media users)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tasks to Try:</p>
+<ol class="arabic simple">
+<li><p>Analyze the impact of selection bias by introducing another source of respondents.</p></li>
+<li><p>Use random sampling methods to reduce bias in a given dataset.</p></li>
+<li><p>Perform hypothesis testing to check for differences across biased and unbiased groups.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answers here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="descriptive-vs-inferential-statistics">
+<h2><strong>3. Descriptive vs. Inferential statistics</strong><a class="headerlink" href="#descriptive-vs-inferential-statistics" title="Link to this heading">#</a></h2>
+<p>Statistics can be used to either describe a population or sample (<strong>descriptive statistics</strong>) or to make generalizations and predictions about a population based on a sample (<strong>inferential statistics</strong>). The differences are as follows:</p>
+<section id="definition-and-purpose">
+<h3>1. Definition and Purpose<a class="headerlink" href="#definition-and-purpose" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Descriptive statistics</strong></p></th>
+<th class="head"><p><strong>Inferential statistics</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Definition</strong></p></td>
+<td><p>Summarizes and describes the main features of a dataset.</p></td>
+<td><p>Uses sample data to make inferences or predictions about a larger population.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Purpose</strong></p></td>
+<td><p>To organize, summarize, and present data in a clear and understandable way.</p></td>
+<td><p>To make inferences and draw conclusions about a population from a sample using probability theory.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Focus</strong></p></td>
+<td><p>Presentation and visualization of data.</p></td>
+<td><p>Analyzing data to make predictions or test hypotheses.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="techniques-used">
+<h3>2. Techniques Used<a class="headerlink" href="#techniques-used" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Descriptive statistics</strong></p></th>
+<th class="head"><p><strong>Inferential statistics</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Techniques</strong></p></td>
+<td><p>Measures of central tendency (mean, median, mode), dispersion (range, variance, standard deviation), and visualization (charts, tables).</p></td>
+<td><p>Estimation (confidence intervals), hypothesis testing (t-tests, chi-square tests), and regression analysis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Example Methods</strong></p></td>
+<td><p>Frequency distributions, percentages, histograms, pie charts.</p></td>
+<td><p>t-tests, ANOVA, regression analysis, and p-values.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="data-scope">
+<h3>3. Data Scope<a class="headerlink" href="#data-scope" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Descriptive statistics</strong></p></th>
+<th class="head"><p><strong>Inferential statistics</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Scope</strong></p></td>
+<td><p>Describes observed data only (e.g., survey results).</p></td>
+<td><p>Draws conclusions beyond observed data to a larger population.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Use Case</strong></p></td>
+<td><p>Summarizing exam scores for a class.</p></td>
+<td><p>Predicting the performance of all students based on a sampled group.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="example">
+<h3><strong>Example</strong><a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Parameter:</strong> The population mean (μ) or population standard deviation (σ).</p></li>
+<li><p><strong>Statistic:</strong> The sample mean (x̄) or sample standard deviation (s).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="why-do-we-use-it">
+<h3><strong>Why do we use it?</strong><a class="headerlink" href="#why-do-we-use-it" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Studying the entire population is often impractical or impossible.</p></li>
+<li><p>Sampling is faster, more cost-effective, and easier to analyze.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">What is the primary purpose of descriptive statistics?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) To make predictions about a population</p></li>
+<li><p class="sd-card-text">B) To test hypotheses using sample data</p></li>
+<li><p class="sd-card-text">C) To summarize and describe the main features of a dataset</p></li>
+<li><p class="sd-card-text">D) To analyze relationships between variables</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following is an example of inferential statistics?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Calculating the average age of students in a class</p></li>
+<li><p class="sd-card-text">B) Creating a bar chart to display sales data</p></li>
+<li><p class="sd-card-text">C) Using a sample to estimate the average income of a country’s population</p></li>
+<li><p class="sd-card-text">D) Measuring the range of exam scores in a dataset</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which statistical technique is commonly used in descriptive statistics?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Hypothesis testing</p></li>
+<li><p class="sd-card-text">B) Confidence intervals</p></li>
+<li><p class="sd-card-text">C) Frequency distributions</p></li>
+<li><p class="sd-card-text">D) Regression analysis</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following best describes inferential statistics?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) It focuses on organizing and summarizing data</p></li>
+<li><p class="sd-card-text">B) It is used to make conclusions about an entire population based on a sample</p></li>
+<li><p class="sd-card-text">C) It provides exact values for entire datasets</p></li>
+<li><p class="sd-card-text">D) It is only used in exploratory data analysis</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Descriptive statistics can help us predict trends in future data.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Inferential statistics rely on probability theory to make generalizations about a population.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Measures such as mean, median, and mode are part of inferential statistics.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Sampling is often used in inferential statistics to analyze large populations efficiently.<br />
+<strong>True</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">What is the main difference between descriptive and inferential statistics?</p></li>
+<li><p class="sd-card-text">Provide an example where descriptive statistics would be more useful than inferential statistics.</p></li>
+<li><p class="sd-card-text">Why is sampling important in inferential statistics?</p></li>
+<li><p class="sd-card-text">How does inferential statistics help businesses make data-driven decisions?</p></li>
+<li><p class="sd-card-text">List two techniques used in inferential statistics and explain their purpose.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A school wants to analyze students’ exam scores to understand overall performance. Would descriptive or inferential statistics be more appropriate? Explain your answer.</p></li>
+<li><p class="sd-card-text">A company surveys 500 customers out of 10,000 total customers to determine satisfaction levels. Which type of statistics should they use to generalize the results to all customers?</p></li>
+<li><p class="sd-card-text">If a research team wants to determine whether a new drug is effective by testing it on a group of 1,000 patients, which type of statistics should be applied, and why?</p></li>
+<li><p class="sd-card-text">Suppose you conducted a survey of 200 people to estimate the average daily coffee consumption of all office workers in your city. What kind of statistical approach would you use, and what steps should you take to ensure reliable results?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A market research team collected sales data from 50 stores to estimate the sales performance of a newly launched product across the entire country.</p>
+<ul class="simple">
+<li><p class="sd-card-text">What challenges might they face in making accurate inferences?</p></li>
+<li><p class="sd-card-text">How can they ensure that their sample is representative of the entire population?</p></li>
+<li><p class="sd-card-text">Why is it important to use inferential statistics instead of relying only on descriptive statistics?</p></li>
+</ul>
+</div>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="parameters-vs-statistics">
+<h2><strong>4. Parameters vs. Statistics</strong><a class="headerlink" href="#parameters-vs-statistics" title="Link to this heading">#</a></h2>
+<p>To better understand inferential statistics, it is important to distinguish between a parameter and a statistic.</p>
+<section id="definition-and-differences">
+<h3>1. Definition and Differences<a class="headerlink" href="#definition-and-differences" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Statistic</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Definition</strong></p></td>
+<td><p>A numerical value that describes a characteristic of an entire population.</p></td>
+<td><p>A numerical value that describes a characteristic of a sample, which is a subset of the population.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Scope</strong></p></td>
+<td><p>Refers to the whole population (e.g., all customers of a company).</p></td>
+<td><p>Based on a subset of the population (e.g., a survey of 1,000 customers).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Symbol</strong></p></td>
+<td><p>Greek letters (e.g., <span class="math notranslate nohighlight">\(\mu\)</span> for mean, <span class="math notranslate nohighlight">\(\sigma\)</span> for standard deviation, <span class="math notranslate nohighlight">\(P\)</span> for proportion).</p></td>
+<td><p>Latin letters (e.g., <span class="math notranslate nohighlight">\(\bar{x}\)</span> for sample mean, <span class="math notranslate nohighlight">\(s\)</span> for sample standard deviation, <span class="math notranslate nohighlight">\(\hat{p}\)</span> for sample proportion).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Variability</strong></p></td>
+<td><p>Fixed and constant (but often unknown).</p></td>
+<td><p>Varies from sample to sample (used to estimate parameters).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Example</strong></p></td>
+<td><p>The average height of all adults in a country (<span class="math notranslate nohighlight">\(\mu\)</span>).</p></td>
+<td><p>The average height of a surveyed group of 1,000 adults (<span class="math notranslate nohighlight">\(\bar{x}\)</span>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="key-concepts">
+<h3>2. Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h3>
+<section id="parameters">
+<h4><strong>Parameters:</strong><a class="headerlink" href="#parameters" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Describe the entire population, which is usually impractical or impossible to measure directly.</p></li>
+<li><p>They are fixed values but often unknown, and we rely on estimates from sample data.</p></li>
+</ul>
+</section>
+<section id="statistics">
+<h4><strong>Statistics:</strong><a class="headerlink" href="#statistics" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Derived from sample data and used to estimate the unknown parameters.</p></li>
+<li><p>Since samples vary, statistics are subject to sampling variability, which leads to the need for confidence intervals and hypothesis testing.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="relationship-between-parameters-and-statistics">
+<h3>3. Relationship Between Parameters and Statistics<a class="headerlink" href="#relationship-between-parameters-and-statistics" title="Link to this heading">#</a></h3>
+<p>Inferential statistics aim to use sample statistics to estimate population parameters.</p>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>The sample mean (<span class="math notranslate nohighlight">\(\bar{x}\)</span>) can be used as an estimate of the population mean (<span class="math notranslate nohighlight">\(\mu\)</span>).</p></li>
+<li><p>The larger and more representative the sample, the closer the statistic will be to the true parameter.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="practical-example">
+<h3>4. Practical Example<a class="headerlink" href="#practical-example" title="Link to this heading">#</a></h3>
+<p>Suppose you want to know the average income of all employees in a company:</p>
+<ul class="simple">
+<li><p><strong>Parameter (<span class="math notranslate nohighlight">\(\mu\)</span>):</strong> The true average income of all employees (e.g., $50,000 per year).</p></li>
+<li><p><strong>Statistic (<span class="math notranslate nohighlight">\(\bar{x}\)</span>):</strong> The average income based on a sample of 100 employees (e.g., $48,500 per year).</p></li>
+</ul>
+<p>If the sample is representative and random, we can infer that the population average income is approximately $50,000.</p>
+</section>
+<hr class="docutils" />
+<section id="importance-of-the-distinction">
+<h3>5. Importance of the Distinction<a class="headerlink" href="#importance-of-the-distinction" title="Link to this heading">#</a></h3>
+<p>Knowing whether you’re dealing with a statistic or a parameter helps in:</p>
+<ul class="simple">
+<li><p>Understanding the reliability of conclusions.</p></li>
+<li><p>Designing proper sampling methods.</p></li>
+<li><p>Calculating confidence intervals and margins of error.</p></li>
+<li><p>Avoiding biases in data interpretation.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">What is the key difference between a parameter and a statistic?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) A parameter describes a sample, while a statistic describes a population.</p></li>
+<li><p class="sd-card-text">B) A parameter describes a population, while a statistic describes a sample.</p></li>
+<li><p class="sd-card-text">C) Parameters are more variable than statistics.</p></li>
+<li><p class="sd-card-text">D) Parameters and statistics are always equal in value.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which of the following symbols typically represents a parameter?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) <span class="math notranslate nohighlight">\(\bar{x}\)</span></p></li>
+<li><p class="sd-card-text">B) <span class="math notranslate nohighlight">\(s\)</span></p></li>
+<li><p class="sd-card-text">C) <span class="math notranslate nohighlight">\(\mu\)</span></p></li>
+<li><p class="sd-card-text">D) <span class="math notranslate nohighlight">\(\hat{p}\)</span></p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following statements is true regarding statistics?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) They are fixed values.</p></li>
+<li><p class="sd-card-text">B) They are subject to sampling variability.</p></li>
+<li><p class="sd-card-text">C) They always represent the entire population.</p></li>
+<li><p class="sd-card-text">D) They are unknown and cannot be estimated.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">If a researcher collects data from a random sample of 500 customers to estimate the average satisfaction of all customers, the sample mean is considered:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) A parameter</p></li>
+<li><p class="sd-card-text">B) A statistic</p></li>
+<li><p class="sd-card-text">C) A population</p></li>
+<li><p class="sd-card-text">D) A variable</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A population parameter is always an exact known value.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">A sample statistic is used to estimate a population parameter.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">A sample statistic can vary depending on the sample selected.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">The symbol <span class="math notranslate nohighlight">\(\bar{x}\)</span> represents a population mean.<br />
+<strong>False</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Define the difference between a parameter and a statistic with an example.</p></li>
+<li><p class="sd-card-text">Why are parameters often unknown in real-world studies?</p></li>
+<li><p class="sd-card-text">What are some common symbols used to represent parameters and statistics?</p></li>
+<li><p class="sd-card-text">Why is it important to use representative samples when estimating population parameters?</p></li>
+<li><p class="sd-card-text">Explain the concept of sampling variability and why it affects statistics.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A company wants to determine the average productivity of its employees. They survey 200 employees out of 5,000.</p>
+<ul class="simple">
+<li><p class="sd-card-text">What is the population in this scenario?</p></li>
+<li><p class="sd-card-text">What is the sample?</p></li>
+<li><p class="sd-card-text">What is the sample statistic they might calculate?</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">Suppose you are a researcher trying to estimate the average lifespan of a species of bird in the wild.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Why is it impractical to measure the lifespan of every bird?</p></li>
+<li><p class="sd-card-text">What steps can you take to ensure your sample is representative?</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">A government agency collects data on household income in a city by surveying 1,000 randomly selected households.</p>
+<ul class="simple">
+<li><p class="sd-card-text">What challenges might they face in ensuring that their sample accurately represents the city’s population?</p></li>
+<li><p class="sd-card-text">How can inferential statistics help them draw conclusions?</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A pharmaceutical company is testing the effectiveness of a new drug. They administer the drug to 1,000 patients out of a total population of 10,000 patients.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Identify the population and sample in this study.</p></li>
+<li><p class="sd-card-text">Explain how inferential statistics would be used to make conclusions about the drug’s effectiveness for the entire population.</p></li>
+<li><p class="sd-card-text">Discuss potential sources of bias that could affect the accuracy of the sample statistic.</p></li>
+</ul>
+</div>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="types-of-data">
+<h2><strong>5. Types of Data</strong><a class="headerlink" href="#types-of-data" title="Link to this heading">#</a></h2>
+<p>Data can be classified into various types based on its nature. Understanding these types helps in selecting the appropriate statistical techniques for analysis.</p>
+<section id="categorical-data">
+<h3><strong>1. Categorical Data</strong><a class="headerlink" href="#categorical-data" title="Link to this heading">#</a></h3>
+<p>Categorical data represents characteristics that describe attributes or qualities rather than numerical values.</p>
+<ul class="simple">
+<li><p><strong>Key Features:</strong> Categories with no inherent numerical value or order.</p></li>
+<li><p><strong>Examples:</strong> Gender (Male, Female), Eye Color (Brown, Blue, Green), Car Brands (Toyota, Ford, BMW).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="numerical-data">
+<h3><strong>2. Numerical Data</strong><a class="headerlink" href="#numerical-data" title="Link to this heading">#</a></h3>
+<p>Numerical data represents quantifiable measurements and can be further divided into:</p>
+<ul class="simple">
+<li><p><strong>Discrete:</strong><br />
+Represents countable values with no intermediate values.</p>
+<ul>
+<li><p><strong>Examples:</strong> Number of students in a class, number of cars in a parking lot.</p></li>
+</ul>
+</li>
+<li><p><strong>Continuous:</strong><br />
+Represents measurable values that can take any value within a range.</p>
+<ul>
+<li><p><strong>Examples:</strong> Height, Weight, Temperature.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ordinal-data">
+<h3><strong>3. Ordinal Data</strong><a class="headerlink" href="#ordinal-data" title="Link to this heading">#</a></h3>
+<p>Ordinal data represents categories with a meaningful order; however, the differences between values are not necessarily equal or meaningful.</p>
+<ul class="simple">
+<li><p><strong>Key Features:</strong> Order matters, but exact differences are not quantifiable.</p></li>
+<li><p><strong>Examples:</strong> Education Level (High School, Bachelor’s, Master’s, PhD), Customer Satisfaction (Low, Medium, High), Movie Ratings (1 star, 2 stars, etc.).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="interval-data">
+<h3><strong>4. Interval Data</strong><a class="headerlink" href="#interval-data" title="Link to this heading">#</a></h3>
+<p>Interval data consists of numerical values with equal intervals between them but lacks a true zero point.</p>
+<ul class="simple">
+<li><p><strong>Key Features:</strong> Allows meaningful comparison of differences, but not ratios.</p></li>
+<li><p><strong>Examples:</strong> Temperature in Celsius or Fahrenheit, IQ scores, Dates in a calendar.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="ratio-data">
+<h3><strong>5. Ratio Data</strong><a class="headerlink" href="#ratio-data" title="Link to this heading">#</a></h3>
+<p>Ratio data is similar to interval data but includes a true zero point, making ratio comparisons meaningful.</p>
+<ul class="simple">
+<li><p><strong>Key Features:</strong> Allows comparisons such as “twice as much.”</p></li>
+<li><p><strong>Examples:</strong> Age, Income, Weight, Height, Distance.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="time-series-data">
+<h3><strong>6. Time Series Data</strong><a class="headerlink" href="#time-series-data" title="Link to this heading">#</a></h3>
+<p>Time series data consists of observations collected at successive time intervals, often used for trend analysis and forecasting.</p>
+<ul class="simple">
+<li><p><strong>Key Features:</strong> Data is recorded over time, usually at consistent intervals.</p></li>
+<li><p><strong>Examples:</strong> Daily stock prices, monthly sales data, hourly weather records, annual revenue figures.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Which of the following is an example of categorical data?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Number of students in a class</p></li>
+<li><p class="sd-card-text">B) Eye color (Brown, Blue, Green)</p></li>
+<li><p class="sd-card-text">C) Temperature in Celsius</p></li>
+<li><p class="sd-card-text">D) Monthly sales data</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which type of data allows meaningful ratio comparisons and has a true zero point?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Ordinal</p></li>
+<li><p class="sd-card-text">B) Interval</p></li>
+<li><p class="sd-card-text">C) Ratio</p></li>
+<li><p class="sd-card-text">D) Categorical</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Time series data is characterized by:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) A true zero point</p></li>
+<li><p class="sd-card-text">B) Data recorded at successive time intervals</p></li>
+<li><p class="sd-card-text">C) Categories without an inherent order</p></li>
+<li><p class="sd-card-text">D) Discrete values only</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which of the following is an example of ordinal data?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Exam scores in percentages</p></li>
+<li><p class="sd-card-text">B) Education levels (High School, Bachelor’s, Master’s, PhD)</p></li>
+<li><p class="sd-card-text">C) Eye color categories</p></li>
+<li><p class="sd-card-text">D) Monthly income levels</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Categorical data consists of numerical values with meaningful order.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Discrete numerical data can take any value within a range.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Time series data always follows a regular time interval pattern.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Ratio data has a true zero point and allows for meaningful ratio comparisons.<br />
+<strong>True</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">What are the key differences between interval data and ratio data?</p></li>
+<li><p class="sd-card-text">Provide two examples of categorical data and explain why they fall under this category.</p></li>
+<li><p class="sd-card-text">How does ordinal data differ from nominal data?</p></li>
+<li><p class="sd-card-text">Why is it important to distinguish between discrete and continuous numerical data?</p></li>
+<li><p class="sd-card-text">What type of data would you collect to analyze the performance of an athlete over a season?</p></li>
+<li><p class="sd-card-text">Classify the following variables into Categorical, Numerical (Discrete/Continuous),
+Ordinal, Interval, Ratio, or Time Series:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Marital Status (Single, Married, Divorced)</p></li>
+<li><p class="sd-card-text">Age</p></li>
+<li><p class="sd-card-text">Satisfaction Rating (1 to 5)</p></li>
+<li><p class="sd-card-text">Monthly Salary</p></li>
+<li><p class="sd-card-text">Temperature in Fahrenheit</p></li>
+<li><p class="sd-card-text">Daily Website Traffic (Visits Per Day)</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A hospital records patient temperature every hour. What type of data is being collected, and why?</p></li>
+<li><p class="sd-card-text">If you survey 1,000 people about their preferred car brands, what type of data would this be classified as?</p></li>
+<li><p class="sd-card-text">A researcher is studying the impact of exercise time on weight loss progress over months. What type of data does this represent?</p></li>
+<li><p class="sd-card-text">Identify the types of data in the following scenario:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A retail company tracks monthly sales revenue.</p></li>
+<li><p class="sd-card-text">A school records students’ grades (A, B, C, etc.).</p></li>
+<li><p class="sd-card-text">A researcher tracks the age of participants in a study.</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">How would you classify the following data types in a sports competition:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Athlete rankings</p></li>
+<li><p class="sd-card-text">Time taken to complete a race</p></li>
+<li><p class="sd-card-text">Types of medals won (gold, silver, bronze)</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A government agency wants to analyze employment trends by collecting data on age, gender, job position, income, and years of experience.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Identify the type of data for each attribute.</p></li>
+<li><p class="sd-card-text">Explain why it is important to classify data correctly before analysis.</p></li>
+<li><p class="sd-card-text">Discuss how the agency can use descriptive and inferential statistics based on the data collected.</p></li>
+</ul>
+</div>
+</details><p><strong>6. Python Usage Examples</strong></p>
+<p>You can analyze and classify data types using Python. Try the following code snippets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Sample Data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Gender&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span><span class="p">],</span>  <span class="c1"># Categorical</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>  <span class="c1"># Ratio</span>
+    <span class="s2">&quot;Education_Level&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">,</span> <span class="s2">&quot;Bachelor&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;Master&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;PhD&quot;</span><span class="p">],</span>  <span class="c1"># Ordinal</span>
+    <span class="s2">&quot;Temperature_C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">36.5</span><span class="p">,</span> <span class="mf">37.2</span><span class="p">,</span> <span class="mf">36.8</span><span class="p">,</span> <span class="mf">37.0</span><span class="p">],</span>  <span class="c1"># Interval</span>
+    <span class="s2">&quot;Monthly_Income&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">5500</span><span class="p">,</span> <span class="mi">3200</span><span class="p">,</span> <span class="mi">5000</span><span class="p">],</span>  <span class="c1"># Ratio</span>
+    <span class="s2">&quot;Customer_Rating&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>  <span class="c1"># Ordinal</span>
+    <span class="s2">&quot;Sales_Date&quot;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;ME&#39;</span><span class="p">)</span>  <span class="c1"># Time Series</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We can also check data types:&quot;</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Convert ordinal data to ordered category</span>
+<span class="n">education_levels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;High School&quot;</span><span class="p">,</span> <span class="s2">&quot;Bachelor&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;Master&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;PhD&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Education_Level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Education_Level&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">education_levels</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Plot time series data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Or plot time series data:&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Sales_Date&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Monthly_Income&quot;</span><span class="p">,</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Monthly Income Over Time&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Gender  Age Education_Level  Temperature_C  Monthly_Income  \
+0    Male   25     High School           36.5            4000   
+1  Female   30      Bachelor&#39;s           37.2            5500   
+2  Female   22        Master&#39;s           36.8            3200   
+3    Male   28             PhD           37.0            5000   
+
+   Customer_Rating Sales_Date  
+0                3 2023-01-31  
+1                5 2023-02-28  
+2                4 2023-03-31  
+3                2 2023-04-30  
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Monthly Income Over Time&#39;}, xlabel=&#39;Sales_Date&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/bad287f7247c14462808464d54a9ae4ec1dc0647c92995ef595994cb39d01fb2.png" src="../_images/bad287f7247c14462808464d54a9ae4ec1dc0647c92995ef595994cb39d01fb2.png" />
+</div>
+</div>
+<p>Tasks to Try:</p>
+<ol class="arabic simple">
+<li><p>Modify the dataset by adding discrete and continuous numerical data.</p></li>
+<li><p>Write code to filter categorical or numerical data from the DataFrame.</p></li>
+<li><p>Use descriptive statistics functions to summarize the numerical data.</p></li>
+<li><p>Create visualizations for different data types using Matplotlib or Seaborn.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answers here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="levels-of-measurement">
+<h2><strong>6. Levels of measurement</strong><a class="headerlink" href="#levels-of-measurement" title="Link to this heading">#</a></h2>
+<p>Understanding the levels of measurement is crucial for selecting the appropriate statistical methods and analyses. Different data types allow for different types of statistical operations and interpretations.</p>
+<ul class="simple">
+<li><p><strong>Nominal:</strong> Categories with no inherent order; used for classification or labeling purposes.</p>
+<ul>
+<li><p><strong>Examples:</strong> Gender (Male, Female), Eye color (Brown, Blue, Green), Car brands (Toyota, Ford, BMW).</p></li>
+</ul>
+</li>
+<li><p><strong>Ordinal:</strong> Ordered categories, but the differences between them are not uniform or meaningful.</p>
+<ul>
+<li><p><strong>Examples:</strong> Education levels (High School, Bachelor’s, Master’s, PhD), Customer satisfaction (Low, Medium, High).</p></li>
+</ul>
+</li>
+<li><p><strong>Interval:</strong> Ordered and measurable intervals, but with no true zero point.</p>
+<ul>
+<li><p><strong>Examples:</strong> Temperature in Celsius or Fahrenheit, IQ scores, Dates on a calendar.</p></li>
+</ul>
+</li>
+<li><p><strong>Ratio:</strong> Ordered, measurable intervals with a true zero point, allowing for meaningful ratio comparisons.</p>
+<ul>
+<li><p><strong>Examples:</strong> Age, Income, Weight, Height.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="example-classifying-data">
+<h3><strong>Example: Classifying Data</strong><a class="headerlink" href="#example-classifying-data" title="Link to this heading">#</a></h3>
+<p>Suppose you are analyzing data from a fitness app that tracks user information:</p>
+<ul class="simple">
+<li><p><strong>Nominal:</strong> User’s favorite workout type (Yoga, Cardio, Strength Training)</p></li>
+<li><p><strong>Ordinal:</strong> Fitness level (Beginner, Intermediate, Advanced)</p></li>
+<li><p><strong>Interval:</strong> Temperature during the workout (in Celsius)</p></li>
+<li><p><strong>Ratio:</strong> Number of calories burned during the session</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="why-is-it-important">
+<h3><strong>Why is it important?</strong><a class="headerlink" href="#why-is-it-important" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Different levels of measurement allow for different types of statistical operations.</p>
+<ul>
+<li><p>Example: You cannot calculate a mean for nominal data (e.g., colors: “red,” “blue”) but can for interval or ratio data (e.g., temperature, height).</p></li>
+</ul>
+</li>
+<li><p>Helps in selecting the appropriate statistical test.</p></li>
+<li><p>Selecting the appropriate level of measurement is essential for applying the correct statistical techniques.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Which of the following is an example of nominal data?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Temperature in Celsius</p></li>
+<li><p class="sd-card-text">B) Customer satisfaction (Low, Medium, High)</p></li>
+<li><p class="sd-card-text">C) Eye color (Brown, Blue, Green)</p></li>
+<li><p class="sd-card-text">D) Age</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">What distinguishes ordinal data from nominal data?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Ordinal data has a true zero point</p></li>
+<li><p class="sd-card-text">B) Ordinal data has a meaningful order but not equal differences</p></li>
+<li><p class="sd-card-text">C) Ordinal data allows ratio comparisons</p></li>
+<li><p class="sd-card-text">D) Ordinal data consists only of numbers</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which level of measurement allows meaningful ratio comparisons?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Nominal</p></li>
+<li><p class="sd-card-text">B) Ordinal</p></li>
+<li><p class="sd-card-text">C) Interval</p></li>
+<li><p class="sd-card-text">D) Ratio</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> D</p>
+</li>
+<li><p class="sd-card-text">IQ scores are an example of which level of measurement?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Nominal</p></li>
+<li><p class="sd-card-text">B) Ordinal</p></li>
+<li><p class="sd-card-text">C) Interval</p></li>
+<li><p class="sd-card-text">D) Ratio</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following levels of measurement lacks a true zero point?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Ratio</p></li>
+<li><p class="sd-card-text">B) Interval</p></li>
+<li><p class="sd-card-text">C) Ordinal</p></li>
+<li><p class="sd-card-text">D) Nominal</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Nominal data can be ranked in a meaningful order.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Ordinal data can be used for calculating averages.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Interval data allows meaningful differences but lacks a true zero.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Ratio data supports meaningful comparisons such as “twice as much.”<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Dates on a calendar represent ratio data.<br />
+<strong>False</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Define the four levels of measurement and provide an example for each.</p></li>
+<li><p class="sd-card-text">Why is it important to identify the correct level of measurement in statistical analysis?</p></li>
+<li><p class="sd-card-text">How does the presence of a true zero point differentiate ratio data from interval data?</p></li>
+<li><p class="sd-card-text">In what situations would ordinal data be more useful than nominal data?</p></li>
+<li><p class="sd-card-text">Give an example of how an incorrect level of measurement classification could impact data analysis.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A hospital collects data on patient recovery times, gender, and pain levels rated on a scale of 1-10. Identify the level of measurement for each type of data.</p></li>
+<li><p class="sd-card-text">A company records employee ID numbers, their department, and monthly salaries. Classify each under the appropriate level of measurement.</p></li>
+<li><p class="sd-card-text">A weather agency records daily high temperatures. What level of measurement does this data belong to, and why?</p></li>
+<li><p class="sd-card-text">An education researcher collects data on students’ test scores and their favorite school subjects. How should this data be classified?</p></li>
+<li><p class="sd-card-text">A retail store tracks customer feedback with ratings of “Poor,” “Fair,” “Good,” and “Excellent.” What level of measurement is this, and how should it be analyzed?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A fitness company collects the following data from its users:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Workout type (Yoga, Cardio, Strength Training)</p></li>
+<li><p class="sd-card-text">Number of calories burned</p></li>
+<li><p class="sd-card-text">Satisfaction rating (Low, Medium, High)</p></li>
+<li><p class="sd-card-text">Time spent exercising (in minutes)</p></li>
+</ul>
+<p class="sd-card-text"><strong>Questions to discuss:</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Classify each type of data into the appropriate level of measurement.</p></li>
+<li><p class="sd-card-text">Why is it important to classify data correctly in this scenario?</p></li>
+<li><p class="sd-card-text">What types of statistical methods could be applied to analyze each type of data?</p></li>
+<li><p class="sd-card-text">How could misclassifying the data affect business decisions for the company?</p></li>
+</ol>
+</div>
+</details><p><strong>6. Python Usage Examples</strong></p>
+<p>You can classify and analyze different types of data using Python. Below is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Sample dataset with different levels of measurement</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Workout_Type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Yoga&quot;</span><span class="p">,</span> <span class="s2">&quot;Cardio&quot;</span><span class="p">,</span> <span class="s2">&quot;Strength Training&quot;</span><span class="p">,</span> <span class="s2">&quot;Yoga&quot;</span><span class="p">],</span>  <span class="c1"># Nominal</span>
+    <span class="s2">&quot;Satisfaction_Level&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">],</span>  <span class="c1"># Ordinal</span>
+    <span class="s2">&quot;Calories_Burned&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>  <span class="c1"># Ratio</span>
+    <span class="s2">&quot;Temperature&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">22.5</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">]</span>  <span class="c1"># Interval</span>
+<span class="p">}</span>
+
+<span class="c1"># Create a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Convert ordinal data to an ordered category</span>
+<span class="n">satisfaction_levels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Satisfaction_Level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Satisfaction_Level&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">satisfaction_levels</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display data types</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+
+<span class="c1"># Basic descriptive analysis</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average calories burned:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Calories_Burned&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Visualizing numerical data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Workout_Type&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Calories_Burned&quot;</span><span class="p">,</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Calories Burned per Workout Type&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Workout_Type            object
+Satisfaction_Level    category
+Calories_Burned          int64
+Temperature            float64
+dtype: object
+Average calories burned: 362.5
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Calories Burned per Workout Type&#39;}, xlabel=&#39;Workout_Type&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/5506b654c38df3129013025d00932062d62bdd2acecf30891a3fec07238ee1af.png" src="../_images/5506b654c38df3129013025d00932062d62bdd2acecf30891a3fec07238ee1af.png" />
+</div>
+</div>
+<p>Tasks to Try:</p>
+<ol class="arabic simple">
+<li><p>Modify the dataset by adding another nominal and ratio variable.</p></li>
+<li><p>Convert the “Workout_Type” column into categorical data.</p></li>
+<li><p>Perform statistical calculations on ratio and interval data.</p></li>
+<li><p>Create a scatter plot comparing calories burned and temperature.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="variables">
+<h2><strong>7. Variables</strong><a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Variables are fundamental elements in research and data analysis, representing characteristics that can change or vary across different observations.</p>
+<ul class="simple">
+<li><p><strong>Independent variable:</strong><br />
+The variable that is manipulated or categorized to observe its effect on the dependent variable.</p>
+<ul>
+<li><p><strong>Examples:</strong> Amount of study time (in hours), type of fertilizer used, different marketing strategies.</p></li>
+</ul>
+</li>
+<li><p><strong>Dependent variable:</strong><br />
+The variable that is measured or observed to assess the effect of the independent variable.</p>
+<ul>
+<li><p><strong>Examples:</strong> Exam scores, plant growth, sales revenue.</p></li>
+</ul>
+</li>
+<li><p><strong>Confounding variable:</strong>
+A confounding variable is a third variable that affects both the independent variable (IV) and the dependent variable (DV), potentially distorting or masking the true relationship between them.
+In other words, a confounder creates a <strong>false association</strong> or <strong>hides a real effect</strong>, leading to <strong>misinterpretation of causal relationships</strong> in statistical analysis.</p>
+<ul>
+<li><p><strong>Example: Ice Cream &amp; Drowning Deaths</strong></p>
+<ul>
+<li><p><strong>Observation:</strong> Higher ice cream sales are associated with more drowning deaths.</p></li>
+<li><p><strong>Does this mean eating ice cream causes drowning?</strong> ❌ No.</p></li>
+<li><p><strong>Confounding Variable:</strong> <strong>Temperature (Season)</strong></p>
+<ul>
+<li><p>When it’s hot, <strong>ice cream sales increase</strong>.</p></li>
+<li><p>When it’s hot, <strong>more people go swimming</strong>, leading to <strong>more drownings</strong>.</p></li>
+<li><p>The <strong>true cause</strong> of drowning is <strong>not ice cream sales</strong>, but the <strong>hot weather</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="why-do-confounding-variables-matter">
+<h3><strong>Why Do Confounding Variables Matter?</strong><a class="headerlink" href="#why-do-confounding-variables-matter" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>They Can Create False Causal Relationships</strong></p>
+<ul class="simple">
+<li><p>If confounders are ignored, you may <strong>mistakenly conclude that one variable affects another</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>They Can Hide True Relationships</strong></p>
+<ul class="simple">
+<li><p>A confounder might make an actual relationship <strong>appear weaker or nonexistent</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>They Affect Experiment &amp; Study Validity</strong></p>
+<ul class="simple">
+<li><p>In scientific studies, failing to account for confounders leads to <strong>biased results</strong>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="how-to-handle-confounding-variables">
+<h3><strong>How to Handle Confounding Variables?</strong><a class="headerlink" href="#how-to-handle-confounding-variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Randomization:</strong> In experiments, randomly assigning participants helps distribute confounders evenly.</p></li>
+<li><p><strong>Statistical Control:</strong> Use regression analysis to <strong>adjust for confounders</strong>.</p></li>
+<li><p><strong>Matching:</strong> Ensure groups being compared have similar levels of the confounding variable.</p></li>
+<li><p><strong>Stratification:</strong> Analyze data within subgroups where the confounder is constant.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="example-in-research">
+<h3><strong>Example in research:</strong><a class="headerlink" href="#example-in-research" title="Link to this heading">#</a></h3>
+<p>If we are studying the effect of study time on exam performance:</p>
+<ul class="simple">
+<li><p><strong>Independent Variable:</strong> Study time (in hours).</p></li>
+<li><p><strong>Dependent Variable:</strong> Exam scores.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h3><strong>Why is it important?</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Understanding the relationship between variables helps in designing experiments and analyzing results effectively.</p></li>
+<li><p>Identifying independent and dependent variables allows researchers to determine causality.</p></li>
+<li><p>Incorrect classification can lead to false assumptions.</p>
+<ul>
+<li><p>Example: Saying customer satisfaction (DV) influences product price (IV) would be incorrect. Price influences satisfaction, not the other way around.</p></li>
+</ul>
+</li>
+<li><p>Helps in designing experiments and A/B testing:</p>
+<ul>
+<li><p>In clinical trials: New drug (IV) -&gt; Blood pressure reduction (DV).</p></li>
+<li><p>In business analytics: Discount offered (IV) -&gt; Customer purchase behavior (DV).</p></li>
+</ul>
+</li>
+<li><p>Confounding variables are <strong>hidden influencers</strong> that can mislead analysis. Recognizing and controlling for them is crucial for <strong>accurate research, data science, and business decisions</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id7">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Which of the following is an example of an independent variable?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Exam scores</p></li>
+<li><p class="sd-card-text">B) Study time (in hours)</p></li>
+<li><p class="sd-card-text">C) Sales revenue</p></li>
+<li><p class="sd-card-text">D) Plant growth</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">In an experiment to test the effect of a new fertilizer on plant growth, which is the dependent variable?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Amount of fertilizer used</p></li>
+<li><p class="sd-card-text">B) Type of plant</p></li>
+<li><p class="sd-card-text">C) Plant growth</p></li>
+<li><p class="sd-card-text">D) Soil type</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Why is it important to identify independent and dependent variables in research?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) To reduce sample size</p></li>
+<li><p class="sd-card-text">B) To establish causality and analyze relationships</p></li>
+<li><p class="sd-card-text">C) To eliminate bias</p></li>
+<li><p class="sd-card-text">D) To avoid statistical tests</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which of the following represents a correct pair of independent and dependent variables?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Advertising budget (Independent), Product sales (Dependent)</p></li>
+<li><p class="sd-card-text">B) Employee satisfaction (Independent), Number of marketing campaigns (Dependent)</p></li>
+<li><p class="sd-card-text">C) Customer age (Independent), Employee turnover (Dependent)</p></li>
+<li><p class="sd-card-text">D) Hours worked (Dependent), Employee salary (Independent)</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> A</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">The dependent variable is the variable that is manipulated in an experiment.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">An independent variable is the factor that influences changes in the dependent variable.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">In a study analyzing the impact of social media usage on sleep quality, sleep quality is the dependent variable.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Researchers can manipulate dependent variables to observe changes in independent variables.<br />
+<strong>False</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Define independent and dependent variables and provide an example of each.</p></li>
+<li><p class="sd-card-text">Why is it crucial to identify the dependent variable in a research study?</p></li>
+<li><p class="sd-card-text">How can confounding variables impact the relationship between independent and dependent variables?</p></li>
+<li><p class="sd-card-text">Provide a real-life example where identifying independent and dependent variables is critical for decision-making.</p></li>
+<li><p class="sd-card-text">In a study investigating the effect of advertising spend on sales, what variables would you classify as independent and dependent?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A fitness trainer wants to analyze the effect of different workout routines on weight loss. Identify the independent and dependent variables in this scenario.</p></li>
+<li><p class="sd-card-text">A company wants to study the impact of price discounts on customer purchase behavior. How should the variables be classified?</p></li>
+<li><p class="sd-card-text">A scientist is studying the impact of water temperature on fish swimming speed. What are the independent and dependent variables?</p></li>
+<li><p class="sd-card-text">In a marketing campaign, researchers measure the effect of different ad formats on click-through rates. Identify the variables.</p></li>
+<li><p class="sd-card-text">An educator is studying the relationship between student attendance and exam performance. How should they classify their variables?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A pharmaceutical company is testing the effectiveness of a new drug in lowering blood pressure. They recruit 1,000 patients and randomly assign them to either a placebo or drug treatment group. After eight weeks, they measure the patients’ blood pressure levels.</p>
+<p class="sd-card-text"><strong>Questions to discuss:</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Identify the independent and dependent variables in this study.</p></li>
+<li><p class="sd-card-text">What factors could act as confounding variables?</p></li>
+<li><p class="sd-card-text">How could randomization help ensure valid results?</p></li>
+<li><p class="sd-card-text">What statistical techniques could be used to analyze the relationship between the variables?</p></li>
+<li><p class="sd-card-text">How might the company ensure that the sample used is representative of the larger population?</p></li>
+</ol>
+</div>
+</details><p><strong>6. Python Usage Examples</strong></p>
+<p>You can analyze and visualize relationships between independent and dependent variables using Python. Try the following code snippets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Sample dataset: Study time (independent) vs. Exam scores (dependent)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Study_Hours&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="s2">&quot;Exam_Scores&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Create a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Visualize the relationship using a scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Study_Hours&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Exam_Scores&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Relationship Between Study Hours and Exam Scores&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Study Hours (Independent Variable)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Exam Scores (Dependent Variable)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Calculate correlation between variables</span>
+<span class="n">correlation</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Study_Hours&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Exam_Scores&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Correlation coefficient: </span><span class="si">{</span><span class="n">correlation</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a073a1c9f50f633dea10365dcfa6ea651c69ff8d40cc87865b3904e5fa661afa.png" src="../_images/a073a1c9f50f633dea10365dcfa6ea651c69ff8d40cc87865b3904e5fa661afa.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation coefficient: 1.00
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tasks to Try:</p>
+<ol class="arabic simple">
+<li><p>Modify the dataset to include more variables, such as “Sleep Hours” and “Social Media Usage.”</p></li>
+<li><p>Perform linear regression to analyze the relationship between independent and dependent variables.</p></li>
+<li><p>Calculate summary statistics (mean, median, standard deviation) for each variable.</p></li>
+<li><p>Use Python to identify potential outliers in the data.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="correlation-vs-causation">
+<h2><strong>8. Correlation vs. causation</strong><a class="headerlink" href="#correlation-vs-causation" title="Link to this heading">#</a></h2>
+<p>Understanding the difference between correlation and causation is crucial in data analysis to avoid incorrect conclusions.</p>
+<ul class="simple">
+<li><p><strong>Correlation:</strong><br />
+A statistical measure that describes the strength and direction of a relationship between two variables, but it does <strong>not</strong> imply one causes the other.</p>
+<ul>
+<li><p><strong>Examples:</strong></p>
+<ul>
+<li><p>Ice cream sales and drowning incidents (both increase in summer, but one does not cause the other).</p></li>
+<li><p>Hours of study and exam scores (positive correlation but other factors may be involved).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Causation:</strong><br />
+A cause-and-effect relationship where a change in one variable directly results in a change in another.</p>
+<ul>
+<li><p><strong>Examples:</strong></p>
+<ul>
+<li><p>Smoking causes lung cancer (proven through controlled studies).</p></li>
+<li><p>Exercise reduces the risk of heart disease.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section id="id8">
+<h3><strong>Why is it important?</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Correlation helps in identifying relationships between variables but requires further analysis to determine causation.</p></li>
+<li><p>Understanding causation is essential for decision-making in fields like medicine, economics, and business.</p></li>
+<li><p>Misinterpreting correlation as causation can lead to faulty conclusions and ineffective policies.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="key-differences">
+<h3><strong>Key Differences:</strong><a class="headerlink" href="#key-differences" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Correlation</strong></p></th>
+<th class="head"><p><strong>Causation</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Definition</p></td>
+<td><p>Measures the relationship between two variables.</p></td>
+<td><p>Indicates a direct cause-and-effect relationship.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Directionality</p></td>
+<td><p>No assumption of causality.</p></td>
+<td><p>Implies a one-way influence between variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>Example</p></td>
+<td><p>More sleep correlates with better productivity.</p></td>
+<td><p>Proper sleep <strong>causes</strong> improved cognitive function.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="common-pitfalls">
+<h3><strong>Common Pitfalls:</strong><a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Spurious Correlation:</strong> When two variables appear related but are actually influenced by a third factor.</p></li>
+<li><p><strong>Reverse Causation:</strong> When causation is mistakenly assumed in the wrong direction.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h3>📝 <strong>Exercises for Practice</strong><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>1. Multiple Choice Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">What is the primary distinction between correlation and causation?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Correlation implies causation</p></li>
+<li><p class="sd-card-text">B) Causation implies correlation</p></li>
+<li><p class="sd-card-text">C) Correlation measures relationships, while causation establishes a direct effect</p></li>
+<li><p class="sd-card-text">D) Correlation measures cause and effect relationships</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> C</p>
+</li>
+<li><p class="sd-card-text">Which of the following is an example of causation?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) An increase in ice cream sales is associated with an increase in drowning incidents</p></li>
+<li><p class="sd-card-text">B) More hours spent exercising reduces body fat</p></li>
+<li><p class="sd-card-text">C) More sales lead to higher marketing expenses</p></li>
+<li><p class="sd-card-text">D) Higher shoe sizes are associated with better reading skills in children</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">If a study finds that students who drink more coffee tend to score higher on exams, which conclusion can be drawn?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Drinking coffee causes better exam scores</p></li>
+<li><p class="sd-card-text">B) There is a correlation, but causation cannot be determined</p></li>
+<li><p class="sd-card-text">C) Studying less causes higher exam scores</p></li>
+<li><p class="sd-card-text">D) Coffee consumption reduces stress</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">What is a spurious correlation?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) A real causal relationship between two variables</p></li>
+<li><p class="sd-card-text">B) A relationship that exists due to chance or a third variable</p></li>
+<li><p class="sd-card-text">C) A perfectly linear relationship between two variables</p></li>
+<li><p class="sd-card-text">D) A correlation that implies causation</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> B</p>
+</li>
+<li><p class="sd-card-text">Which of the following could be a result of misinterpreting correlation as causation?</p>
+<ul class="simple">
+<li><p class="sd-card-text">A) Implementing ineffective policies</p></li>
+<li><p class="sd-card-text">B) Increasing sample sizes</p></li>
+<li><p class="sd-card-text">C) Using better data visualization techniques</p></li>
+<li><p class="sd-card-text">D) Improving the accuracy of predictions</p></li>
+</ul>
+<p class="sd-card-text"><strong>Answer:</strong> A</p>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>2. True or False</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A correlation of 0.9 between two variables means that one variable causes the other.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Reverse causation occurs when the cause and effect are mistakenly assumed in the wrong direction.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">If two variables have no correlation, it means there is no causal relationship between them.<br />
+<strong>False</strong></p></li>
+<li><p class="sd-card-text">Controlled experiments can help establish causation.<br />
+<strong>True</strong></p></li>
+<li><p class="sd-card-text">Causation always implies a strong correlation.<br />
+<strong>False</strong></p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>3. Short Answer Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Explain the difference between correlation and causation with an example.</p></li>
+<li><p class="sd-card-text">What is a spurious correlation, and how can it mislead data analysts?</p></li>
+<li><p class="sd-card-text">Provide a real-world example where correlation was mistaken for causation and led to incorrect conclusions.</p></li>
+<li><p class="sd-card-text">How can researchers establish causation instead of just correlation?</p></li>
+<li><p class="sd-card-text">Why is it important to distinguish between correlation and causation in policy-making?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>4. Application-Based Questions</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">A study finds a strong positive correlation between the number of hours spent playing video games and academic performance. How would you approach this result?</p></li>
+<li><p class="sd-card-text">A company notices a correlation between the number of ads shown and revenue generated. What steps should they take before concluding causation?</p></li>
+<li><p class="sd-card-text">How would you design an experiment to determine if eating breakfast causes higher productivity at work?</p></li>
+<li><p class="sd-card-text">If ice cream sales and crime rates both rise during the summer months, how would you explain this relationship using correlation and causation concepts?</p></li>
+<li><p class="sd-card-text">An analyst finds that cities with more libraries tend to have higher literacy rates. What factors should be considered before assuming causation?</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><strong>5. Critical Thinking Exercise</strong></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Consider the following scenario:<br />
+A health researcher observes that people who consume more fruits and vegetables tend to have lower rates of heart disease.</p>
+<p class="sd-card-text"><strong>Questions to discuss:</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Does this observation imply causation? Why or why not?</p></li>
+<li><p class="sd-card-text">What confounding variables might be influencing this relationship?</p></li>
+<li><p class="sd-card-text">What additional data or analysis would you need to establish causation?</p></li>
+<li><p class="sd-card-text">How could an experimental study be designed to determine if the relationship is causal?</p></li>
+<li><p class="sd-card-text">Why might policymakers want to be cautious when interpreting this correlation?</p></li>
+</ol>
+</div>
+</details></section>
+<section id="id10">
+<h3><strong>6. Python Usage Examples</strong><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Python can be used to analyze and visualize relationships between variables. Below is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Sample dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Ice_Cream_Sales&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">700</span><span class="p">],</span>
+    <span class="s2">&quot;Drowning_Incidents&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
+    <span class="s2">&quot;Temperature&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Scatter plot showing correlation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Ice_Cream_Sales&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Drowning_Incidents&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Correlation between Ice Cream Sales and Drowning Incidents&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Ice Cream Sales&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Drowning Incidents&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Calculate correlation matrix</span>
+<span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation Matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">correlation_matrix</span><span class="p">)</span>
+
+<span class="c1"># Checking for spurious correlation by controlling for temperature</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Temperature&quot;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Drowning_Incidents&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperature vs Drowning Incidents&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Drowning Incidents&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0b9fa5ebda9c8ff3774548e571bffea61ee4e74bfe3c392fc19f3efe9c8f09e9.png" src="../_images/0b9fa5ebda9c8ff3774548e571bffea61ee4e74bfe3c392fc19f3efe9c8f09e9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation Matrix:
+                     Ice_Cream_Sales  Drowning_Incidents  Temperature
+Ice_Cream_Sales                 1.0                 1.0          1.0
+Drowning_Incidents              1.0                 1.0          1.0
+Temperature                     1.0                 1.0          1.0
+</pre></div>
+</div>
+<img alt="../_images/c0e721338a7715bc6ea1bc506084434a3dc65307bb018fc8f5b26c08903ac02e.png" src="../_images/c0e721338a7715bc6ea1bc506084434a3dc65307bb018fc8f5b26c08903ac02e.png" />
+</div>
+</div>
+<p>Tasks to Try:</p>
+<ol class="arabic simple">
+<li><p>Add another variable such as “Sunscreen Sales” and analyze its correlation with ice cream sales and drowning incidents.</p></li>
+<li><p>Use linear regression to explore relationships between variables.</p></li>
+<li><p>Identify potential confounding variables using Python statistical tools.</p></li>
+<li><p>Create a visualization to show how correlation does not imply causation.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary">
+<h1>Summary:<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="next-steps">
+<h1>Next steps:<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_foundations_of_statistics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2. Foundations of Statistics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_2_descriptive_statistics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Basic Terminology</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-vs-sample"><strong>1. Population vs. Sample</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-sample"><strong>Why Use a Sample?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-for-practice">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-bias-types"><strong>2. Bias and Bias Types</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-bias-important"><strong>Why is Bias Important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-bias"><strong>Common Types of Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-minimize-bias"><strong>How to Minimize Bias</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-scenario"><strong>Example Scenario</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📝 <strong>Exercises for Practice</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python-usage-examples"><strong>Python Usage Examples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-vs-inferential-statistics"><strong>3. Descriptive vs. Inferential statistics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-purpose">1. Definition and Purpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-used">2. Techniques Used</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scope">3. Data Scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example"><strong>Example</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-it"><strong>Why do we use it?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-vs-statistics"><strong>4. Parameters vs. Statistics</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-differences">1. Definition and Differences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">2. Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters"><strong>Parameters:</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics"><strong>Statistics:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-parameters-and-statistics">3. Relationship Between Parameters and Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example">4. Practical Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-the-distinction">5. Importance of the Distinction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-data"><strong>5. Types of Data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data"><strong>1. Categorical Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data"><strong>2. Numerical Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinal-data"><strong>3. Ordinal Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-data"><strong>4. Interval Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-data"><strong>5. Ratio Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data"><strong>6. Time Series Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-measurement"><strong>6. Levels of measurement</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-classifying-data"><strong>Example: Classifying Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-it-important"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables"><strong>7. Variables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-confounding-variables-matter"><strong>Why Do Confounding Variables Matter?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-handle-confounding-variables"><strong>How to Handle Confounding Variables?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-in-research"><strong>Example in research:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">📝 <strong>Exercises for Practice</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-vs-causation"><strong>8. Correlation vs. causation</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>Why is it important?</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-differences"><strong>Key Differences:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls"><strong>Common Pitfalls:</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">📝 <strong>Exercises for Practice</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"><strong>6. Python Usage Examples</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Angel Rafael Ortega Ramírez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

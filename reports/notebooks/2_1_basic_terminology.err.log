@@ -1,0 +1,76 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Sample biased dataset (survey from social media users)
+data = {
+    "Age": [18, 22, 25, 35, 45, 50, 60, 65],
+    "Income": [20000, 25000, 30000, 50000, 70000, 75000, 80000, 85000],
+    "Survey_Source": ["Social Media", "Social Media", "Social Media", "Direct Mail", "Direct Mail", "Direct Mail", "Newspaper", "Newspaper"]
+}
+
+df = pd.DataFrame(data)
+
+# Check representation by source
+sns.countplot(
+    x="Survey_Source",
+    data=df
+)
+plt.title("Survey Respondents by Source")
+plt.show()
+
+# Analyze potential bias by income levels
+sns.boxplot(
+    x="Survey_Source",
+    y="Income",
+    data=df
+)
+plt.title("Income Distribution by Survey Source")
+plt.show()
+
+# Solution: Resampling techniques or weighting methods
+from sklearn.utils import resample
+
+# Oversample underrepresented groups
+df_balanced = resample(
+    df[df["Survey_Source"] != "Social Media"],
+    replace=True,
+    n_samples=3,
+    random_state=42
+)
+df_final = pd.concat(
+    [df[df["Survey_Source"] == "Social Media"],
+     df_balanced]
+)
+
+pd.DataFrame(df_final["Survey_Source"].value_counts())
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mpd[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mseaborn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01msns[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[1;32m      5[0m [38;5;66;03m# Sample biased dataset (survey from social media users)[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'seaborn'
+
