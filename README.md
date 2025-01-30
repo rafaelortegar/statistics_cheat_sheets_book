@@ -66,6 +66,22 @@ This repository contains a comprehensive course designed to take learners from t
   - Central Tendency measurements: Mean, Median, Mode
   - Variability measurements: Range, Variance, Standard Deviation
   - Skewness and Kurtosis
+- **Covariance, Correlation and Causation:**
+  - Covariance:
+    - Definition, formula, and interpretation
+    - Examples with python
+  - Correlation:
+    - Definition, formula and interpretation (Positive, Negative, and Zero Correlation)
+    - Pearson, Spearman, and Kendall correlation coefficients (and when to use each)
+    - Covariance vs. correlation
+    - How to calculate correlation (formula and python implementation)
+  - Causation:
+    - Why correlation does not imply causation
+    - Confounding variables, omitted variable bias, spurious correlation, and Simpson's paradox
+    - Methods to test for causality:
+      - Experimental vs. Observational Data
+      - Randomized Controlled Trials (RCTs)
+      - Quasi-Experimental Methods (Instrumental Variables, Difference-in-Differences)
 - **Data Visualization**:
   - Graphical Representations: Histograms, Boxplots, Scatterplots, Heatmaps
 - **Sampling methods**:
@@ -120,11 +136,14 @@ This repository contains a comprehensive course designed to take learners from t
   - Null and Alternative Hypotheses
   - Z-tests, T-tests, ANOVA, Chi-Square Tests
 - **Common Problems**
+  - Spurious correlations and confounding variables
   - "Everything is significant" problem
 
 ### **6. Regression Analysis**
 
+- **Quick reminder: Ccorrelation vs causatio**
 - **Linear Regression**:
+  - How regression models attempt to establish relationships?
   - Simple and Multiple Linear Regression
   - Model Assumptions and Diagnostics
 - **Metrics**:
@@ -137,6 +156,7 @@ This repository contains a comprehensive course designed to take learners from t
 
 ### **7. Exploratory Data Analysis (EDA)**
 
+- **Univariate vs Bivariate EDA**
 - **Data Cleaning and Visualization**:
   - Pair Plots, Correlation Heatmaps
   - Outlier Detection (Z-scores, IQR)
@@ -218,7 +238,7 @@ This repository contains a comprehensive course designed to take learners from t
 - **Data Storytelling Techniques**:
   - Structuring narratives for different audiences
 - **Causal Inference**:
-  - Using techniques like Instrumental Variables and Propensity Score Matching
+  - Using techniques like Instrumental Variables, Propensity Score Matching, and Difference-in-Differences.
 
 ### **14. Final Project**
 
