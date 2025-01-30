@@ -1,8 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Statistics for Data Science
+author: Angel Rafael Ortega Ramírez
+copyright: "2024"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.

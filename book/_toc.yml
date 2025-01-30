@@ -3,11 +3,39 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- title: Introduction to statistics
-  file: notebooks/introduction
-- title: Setting up the environment
-  file: notebooks/setting_up_environment
+parts:
+  - caption: "Course content"
+    chapters:
+      - title: "1. Getting started"
+        file: notebooks/1_getting_started
+        sections:
+          - title: "1.1 Introduction to statistics"
+            file: notebooks/1_1_introduction
+          - title: "1.2 Setting up the environment"
+            file: notebooks/1_2_setting_up_environment
+      - title: "2. Foundations of statistics"
+        file: notebooks/2_foundations_of_statistics
+        sections:
+          - title: "2.1 Basic Terminology"
+            file: notebooks/2_1_basic_terminology
+          - title: "2.2 Descriptive Statistics"
+            file: notebooks/2_2_descriptive_statistics
+
+  # - caption: "WIP"
+  #   chapters:      
+  #     - title: "2. Foundations of statistics"
+  #       file: notebooks/2_foundations_of_statistics
+  #       sections:
+  #         - title: "2.1 Basic Terminology"
+  #           file: notebooks/2_1_basic_terminology
+
+  - caption: "Archived Content"
+    chapters:
+      - title: Old Introduction
+        file: intro_old
+      - title: Markdown Guide
+        file: markdown
+      - title: Notebook Examples
+        file: notebooks
+      - title: Markdown and Notebooks
+        file: markdown-notebooks
