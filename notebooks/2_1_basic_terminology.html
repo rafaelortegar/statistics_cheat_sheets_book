@@ -806,15 +806,23 @@ When participants fail to accurately remember past events, leading to skewed dat
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="../_images/2f5453933ca8783be5f97f7335cea51ea191abbb97962f57f613a18ed43018ab.png" src="../_images/2f5453933ca8783be5f97f7335cea51ea191abbb97962f57f613a18ed43018ab.png" />
+<img alt="../_images/5b8fe3bb338153426bc44024555ed2d3d975301db0a18f0a357999e95cc60399.png" src="../_images/5b8fe3bb338153426bc44024555ed2d3d975301db0a18f0a357999e95cc60399.png" />
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Sample biased dataset (survey from social media users)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">32</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># Solution: Resampling techniques or weighting methods</span>
+<span class="ne">---&gt; </span><span class="mi">32</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1"># Oversample underrepresented groups</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">df_balanced</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Survey_Source&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Social Media&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">n_samples</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
 </div>
