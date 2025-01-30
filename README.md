@@ -1,5 +1,7 @@
 # Statistics for Data Science: From Zero to Hero
 
+Link to the book: [https://rafaelortegar.github.io/statistics_cheat_sheets_book/intro.html](https://rafaelortegar.github.io/statistics_cheat_sheets_book/intro.html)
+
 ## **Course Overview**
 This repository contains a comprehensive course designed to take learners from the basics of statistics to advanced concepts, all tailored for applications in data science. With interactive Jupyter Notebooks, real-world case studies, and modern tooling, this course provides an engaging and practical approach to mastering statistics.
 
